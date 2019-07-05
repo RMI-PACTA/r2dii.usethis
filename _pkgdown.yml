@@ -1,19 +1,21 @@
-url: https://forestgeo.github.io/fgeo.template/
-
-authors:
-  Mauro Lepore:
-    href: https://github.com/forestgeo
-  CTFS-ForestGEO:
-    href: http://www.forestgeo.si.edu/
+destination: docs
 
 template:
   params:
-    bootswatch: united
+    bootswatch: flatly
+
+url: https://github.com/2DegreesInvesting/r2dii.usethis/
+
+authors:
+  Mauro Lepore:
+    href: https://github.com/2DegreesInvesting/
+  2 Degrees Investing Initiative:
+    href: https://2degrees-investing.org/
 
 home:
   links:
   - text: Learn more
-    href: http://www.forestgeo.si.edu/
+    href: https://2degrees-investing.org/
 
 
 
@@ -26,7 +28,7 @@ navbar:
       href: https://github.com/maurolepore
 
     - icon: fa-github
-      href: https://github.com/forestgeo/fgeo.template
+      href: https://github.com/2DegreesInvesting/
 
-    - text: fgeo
-      href: https://forestgeo.github.io/fgeo/
+    - text: r2dii
+      href: https://2DegreesInvesting.github.io/r2dii/
