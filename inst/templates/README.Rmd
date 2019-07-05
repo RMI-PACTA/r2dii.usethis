@@ -26,31 +26,31 @@ EDIT: CONSIDER ADDING BADGES CREATED WITH:
 # In .travis.yml consider adding `warnings_are_errors: false`
 # IMPORTANT (to avoid errors due to low limit rate):
 # Get GITHUB_PAT with usethis::edit_r_environ() and set it as environmental 
-# variablel on travis (see https://github.com/forestgeo/learn/issues/148)
+# variablel on travis (see https://github.com/2DegreesInvesting/learn/issues/148)
 use_travis()
 
 use_coverage("coveralls")
 ```
 
-The goal of __EDIT-PACKAGE-NAME__ is to ...
+The goal of EDIT-PACKAGE-NAME is to ...
 
 ## Installation
 
-Install the latest stable version of **EDIT-PACKAGE-NAME** with:
+Install the latest stable version of EDIT-PACKAGE-NAME with:
 
 ```R
 # install.packages("devtools")
-devtools::install_github("forestgeo/EDIT-PACKAGE-NAME@*release")
+devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME@*release")
 ```
 
-Install the development version of **EDIT-PACKAGE-NAME** with:
+Install the development version of EDIT-PACKAGE-NAME with:
 
 ```R
 # install.packages("devtools")
-devtools::install_github("forestgeo/EDIT-PACKAGE-NAME")
+devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME")
 ```
 
-Or [install all **fgeo** packages in one step](https://forestgeo.github.io/fgeo/index.html#installation).
+Or [install all r2dii packages in one step](https://2DegreesInvesting.github.io/r2dii/index.html#installation).
 
 ## Example
 
@@ -58,7 +58,7 @@ Or [install all **fgeo** packages in one step](https://forestgeo.github.io/fgeo/
 ## TODO: Add example
 ```
 
-[Get started with __fgeo__](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+[Get started with r2dii](https://2DegreesInvesting.github.io/r2dii/articles/r2dii.html)
 
 ## Information
 
@@ -66,15 +66,15 @@ EDIT: Run this chunk then delete it:
 TODO: Move files to .github/ but refer to (FILE.md), not (.github/FILE.md)
 
 ```
-usethis::use_template("SUPPORT.md", package = "fgeo.template")
-usethis::use_template("CONTRIBUTING.md", package = "fgeo.template")
-usethis::use_template("CODE_OF_CONDUCT.md", package = "fgeo.template")
-usethis::use_template("ISSUE_TEMPLATE.md", package = "fgeo.template")
+usethis::use_template("SUPPORT.md", package = "r2dii.usethis")
+usethis::use_template("CONTRIBUTING.md", package = "r2dii.usethis")
+usethis::use_template("CODE_OF_CONDUCT.md", package = "r2dii.usethis")
+usethis::use_template("ISSUE_TEMPLATE.md", package = "r2dii.usethis")
 ```
 
-* [Getting help](https://github.com/forestgeo/fgeo.plot/blob/master/.github/SUPPORT.md).
-* [Contributing](https://github.com/forestgeo/fgeo.plot/blob/master/.github/CONTRIBUTING.md).
-* [Contributor Code of Conduct](https://github.com/forestgeo/fgeo.plot/blob/master/.github/CODE_OF_CONDUCT.md).
+* [Getting help](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/SUPPORT.md).
+* [Contributing](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CONTRIBUTING.md).
+* [Contributor Code of Conduct](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CODE_OF_CONDUCT.md).
 
 ## READ AND DELETE THIS SECTION
 

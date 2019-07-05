@@ -1,19 +1,21 @@
-url: https://forestgeo.github.io/EDIT-PACKAGE-NAME/
-
-authors:
-  Mauro Lepore:
-    href: https://github.com/maurolepore
-  CTFS-ForestGEO:
-    href: http://www.forestgeo.si.edu/
+destination: docs
 
 template:
   params:
-    bootswatch: united
+    bootswatch: flatly
+
+url: https://github.com/2DegreesInvesting/r2dii.usethis/
+
+authors:
+  Mauro Lepore:
+    href: https://github.com/2DegreesInvesting/
+  2 Degrees Investing Initiative:
+    href: https://2degrees-investing.org/
 
 home:
   links:
-    - text: Learn more about ForestGEO
-      href: http://www.forestgeo.si.edu/
+  - text: Learn more
+    href: https://2degrees-investing.org/
 
 
 
@@ -22,31 +24,11 @@ navbar:
   type: default
 
   right:
-  
     - icon: fa-gavel
       href: https://github.com/maurolepore
 
     - icon: fa-github
-      href: https://github.com/forestgeo/EDIT-PACKAGE-NAME
+      href: https://github.com/2DegreesInvesting/
 
-    - text: fgeo
-      href: https://forestgeo.github.io/fgeo/
-
-
-
-reference:
-
-  - title: EDIT-TITLE-OF-FUNCTION-GROUP
-    contents:
-      - EDIT-FUNCTION-NAME
-      - EDIT-FUNCTION-NAME
-
-  - title: EDIT-TITLE-OF-FUNCTION-GROUP
-    contents:
-      - matches("EDIT-MATCH")
-      - starts_with("EDIT-START")
-      - end_with("EDIT-END")
-
-  - title: Datasets
-    contents:
-      - EDIT-DATASET-NAME
+    - text: r2dii
+      href: https://2DegreesInvesting.github.io/r2dii/

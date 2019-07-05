@@ -1,6 +1,6 @@
 # Contributing to EDIT-PACKAGE-NAME
 
-This outlines how to propose a change to __EDIT-PACKAGE-NAME__. For more detailed info about contributing to this, and other __fgeo__ packages (<https://forestgeo.github.io/fgeo/>), please see the [**development contributing guide of the tidyverse**](https://rstd.io/tidy-contrib) (wherever you read __tidyverse__ think __EDIT-PACKAGE-NAME__).
+This outlines how to propose a change to EDIT-PACKAGE-NAME. For more detailed info about contributing to this, and other r2dii packages (<https://2DegreesInvesting.github.io/r2dii/>), please see the [**development contributing guide of the tidyverse**](https://rstd.io/tidy-contrib) (wherever you read tidyverse think EDIT-PACKAGE-NAME).
 
 ### Fixing typos
 
@@ -28,4 +28,4 @@ You can use the [styler](https://CRAN.R-project.org/package=styler) package to a
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-See tidyverse [development contributing guide](https://rstd.io/tidy-contrib) for further details (wherever you read __tidyverse__ think __EDIT-PACKAGE-NAME__).
+See tidyverse [development contributing guide](https://rstd.io/tidy-contrib) for further details (wherever you read tidyverse think EDIT-PACKAGE-NAME).

@@ -33,7 +33,7 @@ knitr::opts_chunk$set(
 This document produces two types of output:
 
 1. .html: Good for websites; Themed consistently with other .html files of the
-   __fgeo__ development.
+   r2dii development.
 2. .md: Good for GitHub -- but notice that the custom theme will be lost.
 
 Both outputs will show a rendered version of this .Rmd file.
