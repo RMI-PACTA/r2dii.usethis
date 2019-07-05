@@ -28,4 +28,4 @@ You can use the [styler](https://CRAN.R-project.org/package=styler) package to a
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-See tidyverse [development contributing guide](https://rstd.io/tidy-contrib) for further details (wherever you read tidyverse think r2dii).
+See tidyverse [development contributing guide](https://rstd.io/tidy-contrib) for further details (wherever you read tidyverse think r2dii.usethis).

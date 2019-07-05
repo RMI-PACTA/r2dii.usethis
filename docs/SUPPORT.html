@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contributing to r2dii.usethis • r2dii.usethis</title>
+<title>Getting help with r2dii.usethis • r2dii.usethis</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:title" content="Contributing to r2dii.usethis" />
+<meta property="og:title" content="Getting help with r2dii.usethis" />
 
 
 
@@ -105,44 +105,22 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Contributing to r2dii.usethis</h1>
+      <h1>Getting help with r2dii.usethis</h1>
     </div>
 
-<div id="contributing-to-r2diiusethis" class="section level1">
+<div id="getting-help-with-r2diiusethis" class="section level1">
 
-<p>This outlines how to propose a change to r2dii.usethis. For more detailed info about contributing to this, and other r2dii packages (<a href="https://2DegreesInvesting.github.io/r2dii/" class="uri">https://2DegreesInvesting.github.io/r2dii/</a>), please see the <a href="https://rstd.io/tidy-contrib"><strong>development contributing guide of the tidyverse</strong></a> (wherever you read tidyverse think r2dii.usethis).</p>
-<div id="fixing-typos" class="section level3">
-<h3 class="hasAnchor">
-<a href="#fixing-typos" class="anchor"></a>Fixing typos</h3>
-<p>Small typos or grammatical errors in documentation may be edited directly using the GitHub web interface, so long as the changes are made in the <em>source</em> file.</p>
+<p>Thank you for using r2dii.usethis. Before filing an issue, there are a few places to explore and pieces to put together to make the process as smooth as possible.</p>
+<p>Start by making a minimal <strong>repr</strong>oducible <strong>ex</strong>ample using the <a href="http://reprex.tidyverse.org/">reprex</a> package. The reprex will make all of your R-question-asking endeavors easier, and it will only take five to ten minutes to learn all of the details of the package. For additional reprex pointers, check out the <a href="https://www.tidyverse.org/help/">Get help!</a> section of the tidyverse site.</p>
+<p>Once you have your reprex, the next step is to figure out <a href="https://www.tidyverse.org/help/#where-to-ask">where to ask</a>.</p>
 <ul>
-<li>YES: you edit a roxygen comment in a <code>.R</code> file below <code>R/</code>.</li>
-<li>NO: you edit an <code>.Rd</code> file below <code>man/</code>.</li>
+<li>If it is a question: start with <a href="https://community.rstudio.com/">community.rstudio.com</a>, and/or StackOverflow. There are more people there to answer questions.</li>
+<li>If it is a bug: you are in the right place, file an issue.</li>
+<li>If you are unsure: let the community help you figure it out! If your problem <em>is</em> a bug or a feature request, you can easily return here and report it.</li>
 </ul>
-</div>
-<div id="prerequisites" class="section level3">
-<h3 class="hasAnchor">
-<a href="#prerequisites" class="anchor"></a>Prerequisites</h3>
-<p>Before you make a substantial pull request, you should always file an issue and make sure someone from the team agrees that it’s a problem. If you’ve found a bug, create an associated issue and illustrate the bug with a minimal <a href="https://www.tidyverse.org/help/#reprex">reprex</a>.</p>
-</div>
-<div id="pull-request-process" class="section level3">
-<h3 class="hasAnchor">
-<a href="#pull-request-process" class="anchor"></a>Pull request process</h3>
-<ul>
-<li>We recommend that you create a Git branch for each pull request (PR).</li>
-<li>Look at the Travis build status before and after making changes. The <code>README</code> should contain badges for any continuous integration services used by the package.</li>
-<li>New code should follow the tidyverse <a href="http://style.tidyverse.org">style guide</a>. You can use the <a href="https://CRAN.R-project.org/package=styler">styler</a> package to apply these styles, but please don’t restyle code that has nothing to do with your PR.</li>
-<li>We use <a href="https://cran.r-project.org/package=roxygen2">roxygen2</a>, with <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/markdown.html">Markdown syntax</a>, for documentation.</li>
-<li>We use <a href="https://cran.r-project.org/package=testthat">testthat</a>. Contributions with test cases included are easier to accept.</li>
-<li>For user-facing changes, add a bullet to the top of <code>NEWS.md</code> below the current development version header describing the changes made followed by your GitHub username, and links to relevant issue(s)/PR(s).</li>
-</ul>
-</div>
-<div id="code-of-conduct" class="section level3">
-<h3 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h3>
-<p>Please note that this project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-<p>See tidyverse <a href="https://rstd.io/tidy-contrib">development contributing guide</a> for further details (wherever you read tidyverse think r2dii.usethis).</p>
-</div>
+<p>Before opening a new issue, be sure to search <a href="https://github.com/2DegreesInvesting/r2dii.usethis/issues">issues</a> and <a href="https://github.com/2DegreesInvesting/r2dii.usethis/pulls">pull requests</a> to make sure the bug has not been reported and/or already fixed in the development version. By default, the search will be pre-populated with <code>is:issue is:open</code>. You can <a href="https://help.github.com/articles/searching-issues-and-pull-requests/">edit the qualifiers</a> (e.g. <code>is:pr</code>, <code>is:closed</code>) as needed. For example, you would simply remove <code>is:open</code> to search <em>all</em> issues in the repo, open or closed.</p>
+<p>If you <em>are</em> in the right place, and need to file an issue, please review the <a href="https://www.tidyverse.org/contribute/#issues">“File issues”</a> paragraph from the tidyverse contributing guidelines (wherever you read <strong>tidyverse</strong> think r2dii.usethis).</p>
+<p>Thank you for your help!</p>
 </div>
 
   </div>

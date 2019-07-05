@@ -31,7 +31,7 @@ use_template("README.Rmd", package = "r2dii.usethis")
 ## Information
 
   - [Getting
-    help](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/SUPPORT.md).
-  - [Contributing](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CONTRIBUTING.md).
+    help](https://2degreesinvesting.github.io/r2dii.usethis/SUPPORT.html).
+  - [Contributing](https://2degreesinvesting.github.io/r2dii.usethis/CONTRIBUTING.html).
   - [Contributor Code of
-    Conduct](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CODE_OF_CONDUCT.md).
+    Conduct](https://2degreesinvesting.github.io/r2dii.usethis/CODE_OF_CONDUCT.html).
