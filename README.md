@@ -10,7 +10,7 @@ status](https://www.r-pkg.org/badges/version/r2dii.usethis)](https://cran.r-proj
 status](https://travis-ci.org/2DegreesInvesting/r2dii.usethis.svg?branch=master)](https://travis-ci.org/2DegreesInvesting/r2dii.usethis)
 
 The goal of r2dii.usethis is to automate package and project setup. It
-is inpired by the [usethis](https://usethis.r-lib.org/) package.
+is inspired by the [usethis](https://usethis.r-lib.org/) package.
 
 ## Installation
 
