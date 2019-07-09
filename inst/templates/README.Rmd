@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> EDIT-DESCRIPTION
+# <img src="https://i.imgur.com/3jITMq8.png" align="right" height=40 /> EDIT-DESCRIPTION
 
 <!-- badges: start -->
 <!-- badges: end -->
