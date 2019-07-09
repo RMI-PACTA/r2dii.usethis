@@ -10,7 +10,8 @@ Authors@R:
       person(given = "2 Degrees Investing Initiative",
              role = c("cph", "fnd"),
              email = "contact@2degrees-investing.org"))
-Description: Automate package and project setup.
+Description: Automate package and project setup. For more information visit 
+    <https://2degrees-investing.org/>.
 License: GPL-3
 URL: https://github.com/2DegreesInvesting/r2dii.usethis
 BugReports: 
