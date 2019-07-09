@@ -13,35 +13,12 @@ knitr::opts_chunk$set(
 
 # <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> EDIT-DESCRIPTION
 
-EDIT: ADD BADGES CREATED WITH:
-
-```R
-use_lifecycle_badge("experimental")
-use_cran_badge()
-```
-
-EDIT: CONSIDER ADDING BADGES CREATED WITH:
-
-```
-# In .travis.yml consider adding `warnings_are_errors: false`
-# IMPORTANT (to avoid errors due to low limit rate):
-# Get GITHUB_PAT with usethis::edit_r_environ() and set it as environmental 
-# variablel on travis (see https://github.com/2DegreesInvesting/learn/issues/148)
-use_travis()
-
-use_coverage("coveralls")
-```
+<!-- badges: start -->
+<!-- badges: end -->
 
 The goal of EDIT-PACKAGE-NAME is to ...
 
 ## Installation
-
-Install the latest stable version of EDIT-PACKAGE-NAME with:
-
-```R
-# install.packages("devtools")
-devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME@*release")
-```
 
 Install the development version of EDIT-PACKAGE-NAME with:
 
@@ -50,47 +27,17 @@ Install the development version of EDIT-PACKAGE-NAME with:
 devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME")
 ```
 
-Or [install all r2dii packages in one step](https://2DegreesInvesting.github.io/r2dii/index.html#installation).
-
 ## Example
 
 ```{r example}
 ## TODO: Add example
 ```
 
-[Get started with r2dii](https://2DegreesInvesting.github.io/r2dii/articles/r2dii.html)
-
 ## Information
 
-EDIT: Run this chunk then delete it:
-TODO: Move files to .github/ but refer to (FILE.md), not (.github/FILE.md)
-
-```
-usethis::use_template("SUPPORT.md", package = "r2dii.usethis")
-usethis::use_template("CONTRIBUTING.md", package = "r2dii.usethis")
-usethis::use_template("CODE_OF_CONDUCT.md", package = "r2dii.usethis")
-usethis::use_template("ISSUE_TEMPLATE.md", package = "r2dii.usethis")
-```
+TODO: Add .github/ files
 
 * [Getting help](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/SUPPORT.md).
 * [Contributing](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CONTRIBUTING.md).
 * [Contributor Code of Conduct](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CODE_OF_CONDUCT.md).
-
-## READ AND DELETE THIS SECTION
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
 
