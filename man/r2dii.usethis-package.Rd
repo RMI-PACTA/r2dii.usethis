@@ -18,7 +18,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Mauro Lepore \email{maurolepore@gmail.com} (0000-0002-1986-7988) [contractor]
+\strong{Maintainer}: Mauro Lepore \email{maurolepore@gmail.com} (0000-0002-1986-7988)
+
+Authors:
+\itemize{
+  \item Pranav Pandya \email{pranav.pandya84@yahoo.com} (0000-0002-6462-6905)
+}
 
 Other contributors:
 \itemize{
