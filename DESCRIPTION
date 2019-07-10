@@ -4,9 +4,14 @@ Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
-             role = c("aut", "ctr", "cre"),
+             role = c("aut", "cre"),
              email = "maurolepore@gmail.com",
              comment = c(ORCID = "0000-0002-1986-7988")),
+      person(given = "Pranav",
+             family = "Pandya",
+             role = c("aut"),
+             email = "pranav.pandya84@yahoo.com",
+             comment = c(ORCID = "0000-0002-6462-6905")),
       person(given = "2 Degrees Investing Initiative",
              role = c("cph", "fnd"),
              email = "contact@2degrees-investing.org"))
