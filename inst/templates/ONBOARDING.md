@@ -1,5 +1,3 @@
-(Adapted from https://github.com/jimhester/lintr/issues/318 and https://trio.readthedocs.io/en/latest/contributing.html#joining-the-team.)
-
 ### What exactly happens if I collaborate in a project? 
 
 ### Does it mean I'll break everything if I click the wrong button?
@@ -21,4 +19,6 @@ Beyond that, it all comes down to what you feel up to. If you don't feel like yo
 
 If at any point you're unsure about whether doing something would be appropriate, feel free to ask (by posting Github comment). For example, it's totally OK if the first time you review a PR, you want someone else to check over your work before you hit the merge button.
 
+---
 
+Adapted from https://github.com/jimhester/lintr/issues/318 and https://trio.readthedocs.io/en/latest/contributing.html#joining-the-team.
