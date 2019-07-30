@@ -1,0 +1,4 @@
+name: gh-doc-with-common-settings
+description: >
+   GithHub document with common settings.
+create_dir: FALSE
