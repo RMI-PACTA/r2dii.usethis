@@ -20,11 +20,13 @@ The goal of EDIT-PACKAGE-NAME is to ...
 
 ## Installation
 
-Install the development version of EDIT-PACKAGE-NAME with:
+Install the development version of EDIT-PACKAGE-NAME with something like this:
 
-```R
+```r
 # install.packages("devtools")
-devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME")
+
+# To install from a private repo, see ?usethis::browse_github_token()
+devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME", auth_token = "abc")
 ```
 
 ## Example
@@ -32,12 +34,3 @@ devtools::install_github("2DegreesInvesting/EDIT-PACKAGE-NAME")
 ```{r example}
 ## TODO: Add example
 ```
-
-## Information
-
-TODO: Add .github/ files
-
-* [Getting help](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/SUPPORT.md).
-* [Contributing](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CONTRIBUTING.md).
-* [Contributor Code of Conduct](https://github.com/2DegreesInvesting/r2dii/blob/master/.github/CODE_OF_CONDUCT.md).
-
