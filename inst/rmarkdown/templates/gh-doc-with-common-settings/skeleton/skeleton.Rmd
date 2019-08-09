@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "gh doc with common settings"
 output: github_document
 ---
 
