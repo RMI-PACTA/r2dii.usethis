@@ -1,6 +1,5 @@
 ---
 title: "Building 2dii-like packages"
-output: github_document
 ---
 
 ```{r setup, include=FALSE}

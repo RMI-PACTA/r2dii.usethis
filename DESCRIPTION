@@ -9,26 +9,27 @@ Authors@R:
              comment = c(ORCID = "0000-0002-1986-7988")),
       person(given = "Pranav",
              family = "Pandya",
-             role = c("aut"),
+             role = "aut",
              email = "pranav.pandya84@yahoo.com",
              comment = c(ORCID = "0000-0002-6462-6905")),
       person(given = "2 Degrees Investing Initiative",
              role = c("cph", "fnd"),
              email = "contact@2degrees-investing.org"))
-Description: Automate package and project setup. For more information visit 
-    <https://2degrees-investing.org/>.
+Description: Automate package and project setup. For more
+    information visit <https://2degrees-investing.org/>.
 License: GPL-3 + file LICENSE
 URL: https://github.com/2DegreesInvesting/r2dii.usethis
 BugReports: 
     https://github.com/2DegreesInvesting/r2dii.usethis/issues
+Imports: 
+    utils
 Suggests: 
     covr (>= 3.2.1),
-    usethis (>= 1.5.0),
-    testthat (>= 2.1.0)
+    rmarkdown,
+    testthat (>= 2.1.0),
+    usethis (>= 1.5.0)
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Imports: 
-    utils
