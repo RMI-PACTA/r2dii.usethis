@@ -1,0 +1,26 @@
+---
+title: "gh doc with common settings"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  comment = "#>",
+  error = TRUE,
+  collapse = TRUE
+)
+```
+
+## Building R packages with usethis
+
+All of my projects live under the same parent directory `git/`. 
+
+* I open any RStuido project under `path/to/git/`.
+* This creates the package pkgname at `path/to/git/pkgname/`.
+
+```{r}
+usethis::create_package("../pkgname")
+```
+
+A new RStudio
