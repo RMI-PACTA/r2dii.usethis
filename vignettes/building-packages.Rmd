@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
 
 The goal of this article is to show how to build r2dii-like packages. All code should run in R (default), or a Unix-like terminal (commented with `# bash`).
 
+For a more general explanation see https://r-pkgs.org/whole-game.html.
+
 ## Setup
 
 * Create the packagename package at `root/path/to/parent/`.
@@ -122,11 +124,6 @@ devtools::check()
 ## What else?
 
 The r2dii.usethis includes many more [templates](https://github.com/2DegreesInvesting/r2dii.usethis/tree/master/inst/templates)
-
-```{r}
-path_to_templates <- here::here("./inst/templates")
-fs::path_file(fs::dir_ls(path_to_templates))
-```
 
 For inspiration you may also see [this post](https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/)
 

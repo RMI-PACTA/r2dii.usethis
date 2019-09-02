@@ -6,8 +6,8 @@
 \alias{r2dii.usethis-package}
 \title{r2dii.usethis: Automate Package And Project Setup}
 \description{
-Automate package and project setup. For more information visit 
-    <https://2degrees-investing.org/>.
+Automate package and project setup. For more
+    information visit <https://2degrees-investing.org/>.
 }
 \seealso{
 Useful links:
