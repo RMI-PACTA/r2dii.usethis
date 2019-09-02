@@ -1,5 +1,5 @@
 ---
-title: "gh doc with common settings"
+title: "Building 2dii-like packages"
 output: github_document
 ---
 
@@ -12,23 +12,126 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Building R packages with usethis
+The goal of this article is to show how to build r2dii-like packages. All code should run in R (default), or a Unix-like terminal (commented with `# bash`).
 
-All of my projects live under the same parent directory `git/`. 
+## Setup
 
-* I open any RStuido project under `path/to/git/`.
-* This creates the package pkgname at `path/to/git/pkgname/`.
-
-```
-usethis::create_package("../pkgname")
-```
-
-A new RStudio session will open.
+* Create the packagename package at `root/path/to/parent/`.
 
 ```
+usethis::create_package("../r2dii.packagename")
+```
+
+* Attach useful packages.
+
+```
+library(r2dii.usethis)
 library(usethis)
-
-use_git()
-use_github()
+library(devtools)
 ```
 
+## Add minimal infrastructure
+
+* A new RStudio session will open; I attach usethis and setup git.
+
+```
+use_git()
+```
+
+* For public packages add a common licence (see `?usethis::use_*_license()`).
+
+```r
+use_gpl3_license()
+```
+
+* For private packages maybe add "Private package" in a `LICENSE` file at the root.
+
+```bash
+# bash
+echo "Private package." > LICENSE
+```
+
+* Allow opening the GitHub repo with `browse_github()`.
+
+```
+use_github_links()
+```
+
+* On GitHub consider tweaking collaboration and branch settings.
+
+```
+browse_github()
+```
+
+* Enable markdown syntax in R documentation.
+
+```
+use_roxygen_md()
+```
+
+* Edit the DESCRIPTION file manually.
+* Tidy DESCRIPTION.
+
+```
+use_tidy_description()
+```
+
+* Check.
+
+```r
+# Control + Shift + E
+devtools::check()
+```
+
+* Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.
+* Create a GitHub repo and setup the remote `origin`.
+
+```bash
+# If using https
+git remote add origin https://github.com/2DegreesInvesting/r2dii.git
+
+# If using ssh
+git remote add origin git@github.com:2DegreesInvesting/r2dii.git
+```
+
+(See also `?usethis::use_github()`)
+
+## Extend infrastructure with templates
+
+  * Install the package.
+
+```
+devtools::install()
+```
+
+* Create README.Rmd from a template.
+
+```r
+use_template("README.Rmd", package = "r2dii.usethis")
+use_cran_badge()
+```
+
+* Edit README.Rmd manually.
+* Knit README.Rmd.
+
+* Check that R CMD check results in 0 errors, warnings, and messages.
+
+```
+devtools::check()
+```
+
+## What else?
+
+The r2dii.usethis includes many more [templates](https://github.com/2DegreesInvesting/r2dii.usethis/tree/master/inst/templates)
+
+```{r}
+path_to_templates <- here::here("./inst/templates")
+fs::path_file(fs::dir_ls(path_to_templates))
+```
+
+For inspiration you may also see [this post](https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/)
+
+The ultimate source is the R packages book:
+
+* [First edition](http://r-pkgs.had.co.nz/).
+* [Second edition](https://r-pkgs.org/) (work in progress; includes usethis).
