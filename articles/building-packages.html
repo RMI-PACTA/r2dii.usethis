@@ -104,15 +104,22 @@
 <h2 class="hasAnchor">
 <a href="#setup" class="anchor"></a>Setup</h2>
 <ul>
-<li>Create the packagename package at <code>root/path/to/parent/</code>.</li>
-</ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/create_package.html">usethis::create_package("../r2dii.packagename")</a></code></pre>
+<li>Setup a GitHub repo, clone it, and setup the remote: and link it to RStudio
 <ul>
+<li>On GitHub create a new repository. Name it exactly as the package.</li>
+<li>Copy the clone URL.</li>
+<li>On RStudio create a <em>New Project …&gt; Version Control</em>.</li>
+</ul>
+</li>
 <li>Attach useful packages.</li>
 </ul>
 <pre><code><a href="https://rdrr.io/r/base/library.html">library(r2dii.usethis)
 library(usethis)
 library(devtools)</a></code></pre>
+<ul>
+<li>Transform the project into an R package.</li>
+</ul>
+<pre><code>create_package("../r2dii.packagename")</code></pre>
 </div>
 <div id="add-minimal-infrastructure" class="section level2">
 <h2 class="hasAnchor">
@@ -151,7 +158,7 @@ library(devtools)</a></code></pre>
 <li>Check.</li>
 </ul>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Control + Shift + E</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">check</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</a></code></pre></div>
 <ul>
 <li>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</li>
 <li>Create a GitHub repo and setup the remote <code>origin</code>.</li>
@@ -169,7 +176,7 @@ library(devtools)</a></code></pre>
 <ul>
 <li>Install the package.</li>
 </ul>
-<pre><code>devtools::install()</code></pre>
+<pre><code>install()</code></pre>
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
@@ -180,7 +187,7 @@ library(devtools)</a></code></pre>
 <li><p>Knit README.Rmd.</p></li>
 <li><p>Check that R CMD check results in 0 errors, warnings, and messages.</p></li>
 </ul>
-<pre><code>devtools::check()</code></pre>
+<pre><code><a href="https://rdrr.io/r/utils/PkgUtils.html">check()</a></code></pre>
 </div>
 <div id="what-else" class="section level2">
 <h2 class="hasAnchor">
