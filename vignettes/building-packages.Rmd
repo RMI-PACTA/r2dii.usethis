@@ -113,7 +113,12 @@ install()
 * Create README.Rmd from a template.
 
 ```r
+# Setup readme (e.g. adds a line to .buildignore)
+usethis::use_readme_rmd()
+
+# Overwrite pre-existing file 'README.Rmd' with r2dii's template
 use_template("README.Rmd", package = "r2dii.usethis")
+
 use_cran_badge()
 ```
 
