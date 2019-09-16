@@ -17,11 +17,10 @@ For a more general explanation see https://r-pkgs.org/whole-game.html.
 
 ## Setup
 
-* Create the packagename package at `root/path/to/parent/`.
-
-```
-usethis::create_package("../r2dii.packagename")
-```
+* Setup a GitHub repo, clone it, and setup the remote: and link it to RStudio
+    * On GitHub create a new repository. Name it exactly as the package.
+    * Copy the clone URL.
+    * On RStudio create a _New Project ...> Version Control_.
 
 * Attach useful packages.
 
@@ -29,6 +28,12 @@ usethis::create_package("../r2dii.packagename")
 library(r2dii.usethis)
 library(usethis)
 library(devtools)
+```
+
+* Transform the project into an R package.
+
+```
+usethis::create_package("../r2dii.packagename")
 ```
 
 ## Add minimal infrastructure
