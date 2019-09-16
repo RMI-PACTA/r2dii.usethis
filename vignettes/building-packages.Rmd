@@ -33,7 +33,7 @@ library(devtools)
 * Transform the project into an R package.
 
 ```
-usethis::create_package("../r2dii.packagename")
+create_package("../r2dii.packagename")
 ```
 
 ## Add minimal infrastructure
@@ -86,7 +86,7 @@ use_tidy_description()
 
 ```r
 # Control + Shift + E
-devtools::check()
+check()
 ```
 
 * Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.
@@ -107,7 +107,7 @@ git remote add origin git@github.com:2DegreesInvesting/r2dii.git
   * Install the package.
 
 ```
-devtools::install()
+install()
 ```
 
 * Create README.Rmd from a template.
@@ -123,7 +123,7 @@ use_cran_badge()
 * Check that R CMD check results in 0 errors, warnings, and messages.
 
 ```
-devtools::check()
+check()
 ```
 
 ## What else?
