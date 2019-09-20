@@ -72,9 +72,6 @@
      
   </a>
 </li>
-<li>
-  <a href="https://2DegreesInvesting.github.io/r2dii/">r2dii</a>
-</li>
       </ul>
 </div>
 <!--/.nav-collapse -->
@@ -111,40 +108,35 @@
 <li>On RStudio create a <em>New Project …&gt; Version Control</em>.</li>
 </ul>
 </li>
+<li>Transform the project into an R package.</li>
+</ul>
+<pre><code><a href="https://usethis.r-lib.org/reference/create_package.html">usethis::create_package("../r2dii.packagename")</a></code></pre>
+<ul>
+<li>A new RStudio session will open automatically.</li>
+</ul>
+</div>
+<div id="add-minimal-infrastructure" class="section level2">
+<h2 class="hasAnchor">
+<a href="#add-minimal-infrastructure" class="anchor"></a>Add minimal infrastructure</h2>
+<ul>
 <li>Attach useful packages.</li>
 </ul>
 <pre><code><a href="https://rdrr.io/r/base/library.html">library(r2dii.usethis)
 library(usethis)
 library(devtools)</a></code></pre>
 <ul>
-<li>Transform the project into an R package.</li>
-</ul>
-<pre><code>create_package("../r2dii.packagename")</code></pre>
-</div>
-<div id="add-minimal-infrastructure" class="section level2">
-<h2 class="hasAnchor">
-<a href="#add-minimal-infrastructure" class="anchor"></a>Add minimal infrastructure</h2>
-<ul>
-<li>A new RStudio session will open; I attach usethis and setup git.</li>
-</ul>
-<pre><code>use_git()</code></pre>
-<ul>
 <li>For public packages add a common licence (see <code>?usethis::use_*_license()</code>).</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">use_gpl3_license</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">use_gpl3_license</span>()</a></code></pre></div>
 <ul>
 <li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># bash</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co"># bash</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</a></code></pre></div>
 <ul>
 <li>Allow opening the GitHub repo with <code>browse_github()</code>.</li>
 </ul>
 <pre><code>use_github_links()</code></pre>
-<ul>
-<li>On GitHub consider tweaking collaboration and branch settings.</li>
-</ul>
-<pre><code>browse_github()</code></pre>
 <ul>
 <li>Enable markdown syntax in R documentation.</li>
 </ul>
@@ -157,18 +149,19 @@ library(devtools)</a></code></pre>
 <ul>
 <li>Check.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Control + Shift + E</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Control + Shift + E</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</a></code></pre></div>
 <ul>
-<li>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</li>
-<li>Create a GitHub repo and setup the remote <code>origin</code>.</li>
+<li><p>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</p></li>
+<li>
+<p>On GitHub consider tweaking collaboration and branch settings. For example:</p>
+<ul>
+<li>Add a rule for branches matching the pattern “master”, and</li>
+<li>Restrict who can push to matching branches.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># If using https</span></a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="fu">git</span> remote add origin https://github.com/2DegreesInvesting/r2dii.git</a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co"># If using ssh</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="fu">git</span> remote add origin git@github.com:2DegreesInvesting/r2dii.git</a></code></pre></div>
-<p>(See also <code>?usethis::use_github()</code>)</p>
+</li>
+</ul>
+<pre><code>browse_github()</code></pre>
 </div>
 <div id="extend-infrastructure-with-templates" class="section level2">
 <h2 class="hasAnchor">
@@ -180,19 +173,23 @@ library(devtools)</a></code></pre>
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">usethis<span class="op">::</span><span class="kw"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span>()</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">use_template</span>(<span class="st">"README.Rmd"</span>, <span class="dt">package =</span> <span class="st">"r2dii.usethis"</span>)</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="kw">use_cran_badge</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">usethis<span class="op">::</span><span class="kw"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span>()</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="kw">use_template</span>(<span class="st">"README.Rmd"</span>, <span class="dt">package =</span> <span class="st">"r2dii.usethis"</span>)</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="kw">use_cran_badge</span>()</a></code></pre></div>
 <ul>
-<li>Edit README.Rmd manually.</li>
+<li><p>Edit README.Rmd manually.</p></li>
+<li><p>Spellcheck.</p></li>
 <li><p>Knit README.Rmd.</p></li>
 <li><p>Check that R CMD check results in 0 errors, warnings, and messages.</p></li>
 </ul>
 <pre><code><a href="https://rdrr.io/r/utils/PkgUtils.html">check()</a></code></pre>
+<ul>
+<li>Commit and push.</li>
+</ul>
 </div>
 <div id="what-else" class="section level2">
 <h2 class="hasAnchor">
