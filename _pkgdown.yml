@@ -27,3 +27,7 @@ navbar:
 
     - icon: fa-github
       href: https://github.com/2DegreesInvesting/r2dii.usethis
+
+    - text: 2dii
+      href: https://2degreesinvesting.github.io/r2dii/index.html
+
