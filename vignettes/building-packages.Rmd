@@ -40,7 +40,7 @@ library(usethis)
 library(devtools)
 ```
 
-* For public packages add a common licence (see `?usethis::use_*_license()`).
+* For public packages add a common license (see `?usethis::use_*_license()`).
 
 ```r
 use_gpl3_license()
