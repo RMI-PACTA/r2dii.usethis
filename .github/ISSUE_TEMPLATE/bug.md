@@ -1,7 +1,7 @@
 ---
 name: Bug
 about: Report an unexpected problem or unintended behavior
-title: "[BUG]"
+title: ''
 labels: bug
 assignees: maurolepore
 
