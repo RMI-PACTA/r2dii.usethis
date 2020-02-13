@@ -10,3 +10,4 @@
 ^buildignore$
 ^vignettes/articles$
 ^vignettes$
+^\.github/workflows/pkgdown\.yaml$
