@@ -18,11 +18,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Mauro Lepore \email{maurolepore@gmail.com} (0000-0002-1986-7988)
+\strong{Maintainer}: Mauro Lepore \email{maurolepore@gmail.com} (\href{https://orcid.org/0000-0002-1986-7988}{ORCID})
 
 Authors:
 \itemize{
-  \item Pranav Pandya \email{pranav.pandya84@yahoo.com} (0000-0002-6462-6905)
+  \item Pranav Pandya \email{pranav.pandya84@yahoo.com} (\href{https://orcid.org/0000-0002-6462-6905}{ORCID})
 }
 
 Other contributors:
