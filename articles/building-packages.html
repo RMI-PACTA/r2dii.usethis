@@ -113,7 +113,7 @@
 </li>
 <li>Transform the project into an R package.</li>
 </ul>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html">create_package</a></span>(<span class="st">"../r2dii.packagename"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu">create_package</span>(<span class="st">"../r2dii.packagename"</span>)</pre></body></html></div>
 <ul>
 <li>A new RStudio session will open automatically.</li>
 </ul>
@@ -130,30 +130,30 @@
 <ul>
 <li>For public packages add a common license (see <code>?usethis::use_*_license()</code>).</li>
 </ul>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html">use_gpl3_license</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu">use_gpl3_license</span>()</pre></body></html></div>
 <ul>
 <li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># bash</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</span></code></pre></div>
 <ul>
-<li>Allow opening the GitHub repo with <code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code>.</li>
+<li>Allow opening the GitHub repo with <code>browse_github()</code>.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/use_github_links.html">use_github_links()</a></code></pre>
+<pre><code>use_github_links()</code></pre>
 <ul>
 <li>Enable markdown syntax in R documentation.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/use_roxygen_md.html">use_roxygen_md()</a></code></pre>
+<pre><code>use_roxygen_md()</code></pre>
 <ul>
 <li>Edit the DESCRIPTION file manually.</li>
 <li>Tidy DESCRIPTION.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/tidyverse.html">use_tidy_description()</a></code></pre>
+<pre><code>use_tidy_description()</code></pre>
 <ul>
 <li>Check.</li>
 </ul>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># Control + Shift + E</span>
-<span class="fu"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span>()</pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</pre></body></html></div>
 <ul>
 <li><p>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</p></li>
 <li>
@@ -164,7 +164,7 @@
 </ul>
 </li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code></pre>
+<pre><code>browse_github()</code></pre>
 </div>
 <div id="extend-infrastructure-with-templates" class="section level2">
 <h2 class="hasAnchor">
@@ -172,24 +172,24 @@
 <ul>
 <li>Install the package.</li>
 </ul>
-<pre><code><a href="https://devtools.r-lib.org//reference/install.html">install()</a></code></pre>
+<pre><code>install()</code></pre>
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span>
-<span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span>()
+<span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu">use_readme_rmd</span>()
 
 <span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span>
-<span class="fu"><a href="https://usethis.r-lib.org/reference/use_template.html">use_template</a></span>(<span class="st">"README.Rmd"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"r2dii.usethis"</span>)
+<span class="fu">use_template</span>(<span class="st">"README.Rmd"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"r2dii.usethis"</span>)
 
-<span class="fu"><a href="https://usethis.r-lib.org/reference/badges.html">use_cran_badge</a></span>()</pre></body></html></div>
+<span class="fu">use_cran_badge</span>()</pre></body></html></div>
 <ul>
 <li><p>Edit README.Rmd manually.</p></li>
 <li><p>Spellcheck.</p></li>
 <li><p>Knit README.Rmd.</p></li>
 <li><p>Check that R CMD check results in 0 errors, warnings, and messages.</p></li>
 </ul>
-<pre><code><a href="https://devtools.r-lib.org//reference/check.html">check()</a></code></pre>
+<pre><code><a href="https://rdrr.io/r/utils/PkgUtils.html">check()</a></code></pre>
 <ul>
 <li>Commit and push.</li>
 </ul>
@@ -224,7 +224,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
 </div>
 
       </footer>
