@@ -32,9 +32,12 @@ devtools::install_github("2DegreesInvesting/r2dii.usethis")
 
 ## Example
 
+```{r}
+r2dii.usethis::use_r2dii_data("new_data")
+```
+
 ```R
-library(usethis)
-use_template("README.Rmd", package = "r2dii.usethis")
+usethis::use_template("README.Rmd", package = "r2dii.usethis")
 ```
 
 ## Information

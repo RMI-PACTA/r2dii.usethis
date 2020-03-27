@@ -24,7 +24,7 @@ For a more general explanation see https://r-pkgs.org/whole-game.html.
 
 * Transform the project into an R package.
 
-```
+```r
 usethis::create_package("../r2dii.packagename")
 ```
 
@@ -34,7 +34,7 @@ usethis::create_package("../r2dii.packagename")
 
 * Attach useful packages.
 
-```
+```r
 library(r2dii.usethis)
 library(usethis)
 library(devtools)
