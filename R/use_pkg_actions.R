@@ -15,7 +15,7 @@
 #'     * If your package needs to access private repos, also add your
 #'     `GITHUB_PAT`.
 #' 
-#' * Use pkgdown with [usethis::use_pkgdown()] or from 2dii's template:
+#' * Use pkgdown with `usethis::use_pkgdown()` or from 2dii's template:
 #' 
 #' ```
 #' usethis::use_template("_pkgdown.yml", package = "r2dii.usethis")
@@ -34,7 +34,7 @@
 #' @return Invisible `NULL`.
 #' @export
 #' 
-#' @seealso [usethis::use_pkgdown()], [pkgdown::deploy_site_github()].
+#' @seealso `usethis::use_pkgdown()`, `pkgdown::deploy_site_github()`.
 #'
 #' @examples
 #' \dontrun{

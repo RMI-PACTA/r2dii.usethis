@@ -27,7 +27,7 @@ run examples, edit ".github/workflows/main.yml" and replace
 \item If your package needs to access private repos, also add your
 \code{GITHUB_PAT}.
 }
-\item Use pkgdown with \code{\link[usethis:use_pkgdown]{usethis::use_pkgdown()}} or from 2dii's template:
+\item Use pkgdown with \code{usethis::use_pkgdown()} or from 2dii's template:
 }\preformatted{usethis::use_template("_pkgdown.yml", package = "r2dii.usethis")
 }
 \itemize{
@@ -46,5 +46,5 @@ use_pkg_actions()
 }
 }
 \seealso{
-\code{\link[usethis:use_pkgdown]{usethis::use_pkgdown()}}, \code{\link[pkgdown:deploy_site_github]{pkgdown::deploy_site_github()}}.
+\code{usethis::use_pkgdown()}, \code{pkgdown::deploy_site_github()}.
 }
