@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Building 2dii-like packages • r2dii.usethis</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Building 2dii-like packages">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="r2dii.usethis">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -88,7 +88,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Building 2dii-like packages</h1>
+      <h1 data-toc-skip>Building 2dii-like packages</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/2DegreesInvesting/r2dii.usethis/blob/master/vignettes/building-packages.Rmd"><code>vignettes/building-packages.Rmd</code></a></small>
@@ -113,7 +113,7 @@
 </li>
 <li>Transform the project into an R package.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/create_package.html">usethis::create_package("../r2dii.packagename")</a></code></pre>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html">create_package</a></span>(<span class="st">"../r2dii.packagename"</span>)</pre></body></html></div>
 <ul>
 <li>A new RStudio session will open automatically.</li>
 </ul>
@@ -124,36 +124,36 @@
 <ul>
 <li>Attach useful packages.</li>
 </ul>
-<pre><code><a href="https://rdrr.io/r/base/library.html">library(r2dii.usethis)
-library(usethis)
-library(devtools)</a></code></pre>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">r2dii.usethis</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">usethis</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">devtools</span>)</pre></body></html></div>
 <ul>
 <li>For public packages add a common license (see <code>?usethis::use_*_license()</code>).</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">use_gpl3_license</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html">use_gpl3_license</a></span>()</pre></body></html></div>
 <ul>
 <li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># bash</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</span></code></pre></div>
 <ul>
-<li>Allow opening the GitHub repo with <code>browse_github()</code>.</li>
+<li>Allow opening the GitHub repo with <code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code>.</li>
 </ul>
-<pre><code>use_github_links()</code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/use_github_links.html">use_github_links()</a></code></pre>
 <ul>
 <li>Enable markdown syntax in R documentation.</li>
 </ul>
-<pre><code>use_roxygen_md()</code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/use_roxygen_md.html">use_roxygen_md()</a></code></pre>
 <ul>
 <li>Edit the DESCRIPTION file manually.</li>
 <li>Tidy DESCRIPTION.</li>
 </ul>
-<pre><code>use_tidy_description()</code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/tidyverse.html">use_tidy_description()</a></code></pre>
 <ul>
 <li>Check.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Control + Shift + E</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="kw"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># Control + Shift + E</span>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span>()</pre></body></html></div>
 <ul>
 <li><p>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</p></li>
 <li>
@@ -164,7 +164,7 @@ library(devtools)</a></code></pre>
 </ul>
 </li>
 </ul>
-<pre><code>browse_github()</code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code></pre>
 </div>
 <div id="extend-infrastructure-with-templates" class="section level2">
 <h2 class="hasAnchor">
@@ -172,24 +172,24 @@ library(devtools)</a></code></pre>
 <ul>
 <li>Install the package.</li>
 </ul>
-<pre><code>install()</code></pre>
+<pre><code><a href="https://devtools.r-lib.org//reference/install.html">install()</a></code></pre>
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>usethis<span class="op">::</span><span class="kw"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span>()</span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="kw">use_template</span>(<span class="st">"README.Rmd"</span>, <span class="dt">package =</span> <span class="st">"r2dii.usethis"</span>)</span>
-<span id="cb11-6"><a href="#cb11-6"></a></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="kw">use_cran_badge</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span>
+<span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span>()
+
+<span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/use_template.html">use_template</a></span>(<span class="st">"README.Rmd"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"r2dii.usethis"</span>)
+
+<span class="fu"><a href="https://usethis.r-lib.org/reference/badges.html">use_cran_badge</a></span>()</pre></body></html></div>
 <ul>
 <li><p>Edit README.Rmd manually.</p></li>
 <li><p>Spellcheck.</p></li>
 <li><p>Knit README.Rmd.</p></li>
 <li><p>Check that R CMD check results in 0 errors, warnings, and messages.</p></li>
 </ul>
-<pre><code><a href="https://rdrr.io/r/utils/PkgUtils.html">check()</a></code></pre>
+<pre><code><a href="https://devtools.r-lib.org//reference/check.html">check()</a></code></pre>
 <ul>
 <li>Commit and push.</li>
 </ul>
@@ -211,28 +211,20 @@ library(devtools)</a></code></pre>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#setup">Setup</a></li>
-      <li><a href="#add-minimal-infrastructure">Add minimal infrastructure</a></li>
-      <li><a href="#extend-infrastructure-with-templates">Extend infrastructure with templates</a></li>
-      <li><a href="#what-else">What else?</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/">Mauro Lepore</a>, Pranav Pandya, <a href="https://2degrees-investing.org/">2 Degrees Investing Initiative</a>.</p>
+  <p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/">Mauro Lepore</a>, <a href="https://2degrees-investing.org/">2 Degrees Investing Initiative</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
 </div>
 
       </footer>
