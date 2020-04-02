@@ -1,4 +1,4 @@
 > use_2dii_logo("pkg")
-Add logo to your README with the following html:
+* Add logo to your README with the following html:
 # pkg <a href='https://github.com/2DegreesInvesting/pkg'><img src='https://imgur.com/A5ASZPE.png' align='right' height='43' /></a>
 

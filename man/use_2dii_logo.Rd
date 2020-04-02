@@ -21,5 +21,5 @@ want to add the logo.}
 Output 2DII's blue logo on a white background.
 }
 \examples{
-use_2dii_logo()
+use_2dii_logo("packagename")
 }
