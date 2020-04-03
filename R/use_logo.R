@@ -11,8 +11,8 @@
 #' @export
 #'
 #' @examples
-#' use_2dii_logo("packagename")
-use_2dii_logo <- function(package) {
+#' use_logo("packagename")
+use_logo <- function(package) {
   glue::glue(
     "* Add logo to your README with the following html:
       # {package} <a href='https://github.com/2DegreesInvesting/{package}'>\\
