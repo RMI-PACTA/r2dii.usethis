@@ -1,0 +1,4 @@
+> use_data_format("region_isos")
+#' * `isos` (character): Countries in region, defined by iso code.
+#' * `region` (character): Benchmark region name.
+
