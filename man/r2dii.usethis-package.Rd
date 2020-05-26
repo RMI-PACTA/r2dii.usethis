@@ -13,6 +13,7 @@ Automate package and project setup. For more
 Useful links:
 \itemize{
   \item \url{https://github.com/2DegreesInvesting/r2dii.usethis}
+  \item \url{https://2DegreesInvesting.github.io/r2dii.usethis}
   \item Report bugs at \url{https://github.com/2DegreesInvesting/r2dii.usethis/issues}
 }
 

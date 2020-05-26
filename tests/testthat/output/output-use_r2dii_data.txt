@@ -5,14 +5,24 @@ Add `newdata`
 * [ ] Add "data-raw/data_dictionary/newdata.csv" 
 * [ ] In "data-raw/newdata.R", add something like: 
   ```
+  library(usethis)
   # Source: @<contributor> <URL to issue or pull request>
-  newdata <- readr::read_csv(here::here("data-raw", "newdata.csv"))
+  newdata <- read_csv_(file.path("data-raw", "newdata.csv"))
   use_data(newdata, overwrite = TRUE)
   ```
 * [ ] `usethis::use_r("newdata")`. Document `newdata` 
 * [ ] `usethis::use_test("newdata")`. Add regression tests of `newdata` 
 * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
 * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `newdata` 
+* [ ] Source data-raw/ and test all datasets remain the same: 
+  ```
+  r2dii.data::source_data_raw()
+  devtools::load_all()
+  devtools::test()
+  devtools::check()
+  ```
+* [ ] Edit NEWS.md to include newdata. 
+* [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` 
 
 > use_r2dii_data("my_data")
 Add `my_data`
@@ -21,12 +31,22 @@ Add `my_data`
 * [ ] Add "data-raw/data_dictionary/my_data.csv" 
 * [ ] In "data-raw/my_data.R", add something like: 
   ```
+  library(usethis)
   # Source: @<contributor> <URL to issue or pull request>
-  my_data <- readr::read_csv(here::here("data-raw", "my_data.csv"))
+  my_data <- read_csv_(file.path("data-raw", "my_data.csv"))
   use_data(my_data, overwrite = TRUE)
   ```
 * [ ] `usethis::use_r("my_data")`. Document `my_data` 
 * [ ] `usethis::use_test("my_data")`. Add regression tests of `my_data` 
 * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
 * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `my_data` 
+* [ ] Source data-raw/ and test all datasets remain the same: 
+  ```
+  r2dii.data::source_data_raw()
+  devtools::load_all()
+  devtools::test()
+  devtools::check()
+  ```
+* [ ] Edit NEWS.md to include my_data. 
+* [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` 
 
