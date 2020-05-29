@@ -16,15 +16,18 @@
 #' @examples
 #' dictionary <- data.frame(
 #'   stringsAsFactors = FALSE,
-#'   dataset = c("countries", "countries"),
-#'   column = c("country", "country_iso"),
-#'   typeof = c("character", "character"),
-#'   definition = c("Country name", "Corresponding ISO code")
+#'   dataset = paste0("dataset_", c(1, 1, 2, 2)),
+#'   column = letters[1:4],
+#'   typeof = c("character", "integer", "double", "factor"),
+#'   definition = paste0("Definition of ", letters[1:4])
 #' )
 #' 
-#' dictionary
+#' dictionary 
 #' 
-#' use_column_definitions(dictionary, "countries")
+#' 
+#' use_column_definitions(dictionary, dataset = "dataset_1")
+#' 
+#' use_column_definitions(dictionary, dataset = "dataset_2")
 use_column_definitions <- function(dictionary, dataset) {
   stopifnot(is.character(dataset), is.data.frame(dictionary))
   
