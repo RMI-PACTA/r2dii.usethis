@@ -163,28 +163,48 @@
 #&gt; * [ ] Add "data-raw/data_dictionary/newdata.csv" 
 #&gt; * [ ] In "data-raw/newdata.R", add something like: 
 #&gt;   ```
+#&gt;   library(usethis)
 #&gt;   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;
-#&gt;   newdata &lt;- readr::read_csv(here::here("data-raw", "newdata.csv"))
+#&gt;   newdata &lt;- read_csv_(file.path("data-raw", "newdata.csv"))
 #&gt;   use_data(newdata, overwrite = TRUE)
 #&gt;   ```
 #&gt; * [ ] `usethis::use_r("newdata")`. Document `newdata` 
 #&gt; * [ ] `usethis::use_test("newdata")`. Add regression tests of `newdata` 
 #&gt; * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
-#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `newdata` </div><div class='input'>
+#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `newdata` 
+#&gt; * [ ] Source data-raw/ and test all datasets remain the same: 
+#&gt;   ```
+#&gt;   r2dii.data::source_data_raw()
+#&gt;   devtools::load_all()
+#&gt;   devtools::test()
+#&gt;   devtools::check()
+#&gt;   ```
+#&gt; * [ ] Edit NEWS.md to include newdata. 
+#&gt; * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </div><div class='input'>
 <span class='fu'>use_r2dii_data</span>(<span class='st'>"my_data"</span>)</div><div class='output co'>#&gt; Add `my_data`
 #&gt; 
 #&gt; * [ ] Add "data-raw/my_data.csv" 
 #&gt; * [ ] Add "data-raw/data_dictionary/my_data.csv" 
 #&gt; * [ ] In "data-raw/my_data.R", add something like: 
 #&gt;   ```
+#&gt;   library(usethis)
 #&gt;   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;
-#&gt;   my_data &lt;- readr::read_csv(here::here("data-raw", "my_data.csv"))
+#&gt;   my_data &lt;- read_csv_(file.path("data-raw", "my_data.csv"))
 #&gt;   use_data(my_data, overwrite = TRUE)
 #&gt;   ```
 #&gt; * [ ] `usethis::use_r("my_data")`. Document `my_data` 
 #&gt; * [ ] `usethis::use_test("my_data")`. Add regression tests of `my_data` 
 #&gt; * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
-#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `my_data` </div></pre>
+#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `my_data` 
+#&gt; * [ ] Source data-raw/ and test all datasets remain the same: 
+#&gt;   ```
+#&gt;   r2dii.data::source_data_raw()
+#&gt;   devtools::load_all()
+#&gt;   devtools::test()
+#&gt;   devtools::check()
+#&gt;   ```
+#&gt; * [ ] Edit NEWS.md to include my_data. 
+#&gt; * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -200,7 +220,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
