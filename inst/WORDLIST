@@ -1,6 +1,7 @@
 ald
 CMD
 Codecov
+dataset's
 dii
 DII
 DII's
@@ -15,5 +16,6 @@ px
 README
 repo
 Rmd
+roxygen
 RStudio
 usethis
