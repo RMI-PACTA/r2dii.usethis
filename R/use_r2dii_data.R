@@ -25,8 +25,9 @@ use_r2dii_data <- function(name = NULL) {
   todo(glue('In "data-raw/{newdata}.R", add something like:'))
   cat(glue('
     ```
+    library(usethis)
     # Source: @<contributor> <URL to issue or pull request>
-    {newdata} <- readr::read_csv(here::here("data-raw", "{newdata}.csv"))
+    {newdata} <- read_csv_(file.path("data-raw", "{newdata}.csv"))
     use_data({newdata}, overwrite = TRUE)
     ```
 
@@ -44,6 +45,21 @@ use_r2dii_data <- function(name = NULL) {
     '`usethis::use_test("data_dictionary")`. Test `data_dictionary` includes \\
     `{newdata}`'
   ))
+  
+  todo(glue('Source data-raw/ and test all datasets remain the same:'))
+  cat(glue('
+    ```
+    r2dii.data::source_data_raw()
+    devtools::load_all()
+    devtools::test()
+    devtools::check()
+    ```
+
+  '))
+
+  todo(glue('Edit NEWS.md to include {newdata}.'))
+
+  todo(glue('Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()`'))
 }
 
 todo <- function(x) cat("* [ ]", x, "\n")

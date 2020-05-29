@@ -7,7 +7,7 @@
 use_data_format(dataset)
 }
 \arguments{
-\item{dataset}{Character string of lentgh-1 giving the name of a dataset
+\item{dataset}{Character string of length-1 giving the name of a dataset
 in the column \code{datasets} of \link[r2dii.data:data_dictionary]{r2dii.data::data_dictionary}.}
 }
 \value{

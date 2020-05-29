@@ -1,6 +1,6 @@
 #' Document datasets in r2dii.data::data_dictionary
 #'
-#' @param dataset Character string of lentgh-1 giving the name of a dataset
+#' @param dataset Character string of length-1 giving the name of a dataset
 #' in the column `datasets` of [r2dii.data::data_dictionary].
 #'
 #' @return Text output of class "glue".
