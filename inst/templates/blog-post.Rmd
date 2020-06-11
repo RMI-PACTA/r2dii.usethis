@@ -1,0 +1,22 @@
+---
+title: Title
+description: |
+  Description"
+author:
+  - name: Mauro Lepore
+    url: https://github.com/maurolepore
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: true
+categories:
+  - other
+preview: preview.jpg
+twitter:
+  site: "@mauro_lepore"
+  creator: "@mauro_lepore"
+---
+
+

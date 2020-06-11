@@ -1,0 +1,90 @@
+---
+title: "Post-title"
+description: |
+  Post-description
+author:
+  - name: Mauro Lepore
+    url: https://github.com/maurolepore
+base_url: https://2degreesinvesting.github.io/
+date: 2020-06-05
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    self_contained: true
+categories:
+  - r2dii
+  - software development
+  - release
+preview: preview.jpg
+twitter:
+  site: "@mauro_lepore"
+  creator: "@mauro_lepore"
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r Post-title}
+```
+
+...
+
+```{r DESCRIPTION-title}
+```
+
+...
+
+```{r Post-description}
+```
+
+...
+
+```{r Installation-instructions}
+```
+
+You can install it from CRAN with:
+
+```r
+install.packages("r2dii.match")
+```
+
+```{r Usage-instructions}
+```
+
+Then use it with:
+
+```r
+library(FIXME)
+```
+
+```{r NEWS-details}
+```
+
+...
+
+## Acknowledgements
+
+```{r Acknowledgements, echo=FALSE}
+# bash
+# git shortlog --summary tag-oldrel..tag-release
+# For example: Who contributed to r2dii.match 0.0.2 (since 0.0.1)?
+# git shortlog --summary 0.0.1..0.0.2
+
+thank <- function(x) {
+  x <- sort(x)
+  paste0("[", x, "]", sprintf("(https://github.com/%s)", x), collapse = ", ")
+}
+contributors <- c(
+  "jdhoffa",
+  "maurolepore"
+)
+```
+
+While this release includes commits from only a few of us (`r thank(contributors)`), it is thanks to ideas and feedback from many more colleagues at 2DII.
