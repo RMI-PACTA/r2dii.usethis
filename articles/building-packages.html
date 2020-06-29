@@ -85,7 +85,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="building-packages_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Building 2dii-like packages</h1>
@@ -113,7 +113,9 @@
 </li>
 <li>Transform the project into an R package.</li>
 </ul>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu">create_package</span>(<span class="st">"../r2dii.packagename"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw">usethis</span>::<span class="fu">create_package</span>(<span class="st">"../r2dii.packagename"</span>)
+</pre></div>
 <ul>
 <li>A new RStudio session will open automatically.</li>
 </ul>
@@ -124,13 +126,17 @@
 <ul>
 <li>Attach useful packages.</li>
 </ul>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">r2dii.usethis</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">usethis</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">devtools</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/2DegreesInvesting/r2dii.usethis">r2dii.usethis</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">usethis</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">devtools</span>)
+</pre></div>
 <ul>
 <li>For public packages add a common license (see <code>?usethis::use_*_license()</code>).</li>
 </ul>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu">use_gpl3_license</span>()</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu">use_gpl3_license</span>()
+</pre></div>
 <ul>
 <li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
 </ul>
@@ -152,8 +158,10 @@
 <ul>
 <li>Check.</li>
 </ul>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># Control + Shift + E</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="co"># Control + Shift + E</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/PkgUtils.html">check</a></span>()
+</pre></div>
 <ul>
 <li><p>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</p></li>
 <li>
@@ -176,13 +184,15 @@
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span>
-<span class="kw pkg">usethis</span><span class="kw ns">::</span><span class="fu">use_readme_rmd</span>()
+<div class="sourceCode" id="cb11"><pre class="downlit">
+<span class="co"># Setup readme (e.g. adds a line to .buildignore)</span>
+<span class="kw">usethis</span>::<span class="fu">use_readme_rmd</span>()
 
 <span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span>
-<span class="fu">use_template</span>(<span class="st">"README.Rmd"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"r2dii.usethis"</span>)
+<span class="fu">use_template</span>(<span class="st">"README.Rmd"</span>, package = <span class="st">"r2dii.usethis"</span>)
 
-<span class="fu">use_cran_badge</span>()</pre></body></html></div>
+<span class="fu">use_cran_badge</span>()
+</pre></div>
 <ul>
 <li><p>Edit README.Rmd manually.</p></li>
 <li><p>Spellcheck.</p></li>
