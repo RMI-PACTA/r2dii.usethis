@@ -21,9 +21,9 @@ sector classification bridge to the package r2dii.data. For example, here is how
 I added `psic_classification` following
 https://github.com/2DegreesInvesting/r2dii.data/issues/199 by \@daisy-pacheco.
 
-1. Change working directory into r2dii.data
+Change working directory into r2dii.data
 
-1. Setup
+Setup
 
 ```r
 prefix <- "psic"
@@ -32,7 +32,7 @@ contributor <- "@daisy-pacheco"
 issue <- "#199"
 ```
 
-1. Modify and create files.
+Modify and create files.
 
 ```r
 modify_news(dataset, contributor, issue)
@@ -49,13 +49,13 @@ new_data_dictionary_entry(dataset)
 modify_test_data_dictionary(dataset)
 ```
 
-1. Update data.
+Update data.
 
 ```r
 source_data_raw()
 ```
 
-1. Update regression tests.
+Update regression tests.
 
 ```r
 test()
@@ -64,7 +64,7 @@ snapshot_accept('data_dictionary')
 test()
 ```
 
-1. Check
+Check
 
 ```r
 check()
