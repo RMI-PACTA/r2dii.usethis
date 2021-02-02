@@ -11,7 +11,6 @@
 #'   "\@daisy-pacheco".
 #' @param issue String. Number of related issue or PR, e.g. #199.
 #' @param data A data frame.
-#' @param string A string.
 #'
 #' @return Most functions are interactive, and called for their side effects.
 #' The return value is usually `invisible(dataset)`.
@@ -36,6 +35,8 @@
 #' @name use_classification
 NULL
 
+#' @rdname use_classification
+#' @export
 modify_news <- function(dataset, contributor = NULL, issue = NULL) {
   usethis::edit_file("NEWS.md")
   msg <- format_message(dataset, contributor, issue)
@@ -51,6 +52,8 @@ format_message <- function(dataset, contributor, issue) {
   paste0(head, tail, ".")
 }
 
+#' @rdname use_classification
+#' @export
 name_dataset <- function(prefix) {
   glue("{prefix}_classification")
 }
@@ -76,6 +79,8 @@ format_helpfile <- function(dataset) {
   sprintf(template, dataset)
 }
 
+#' @rdname use_classification
+#' @export
 modify_r_classification_bridge <- function(dataset) {
   usethis::edit_file(file.path("R", "classification_bridge.R"))
 
@@ -83,6 +88,8 @@ modify_r_classification_bridge <- function(dataset) {
   usethis::ui_code_block(x)
 }
 
+#' @rdname use_classification
+#' @export
 write_raw_data <- function(data, dataset) {
   file <- data_raw_path(dataset)
   readr::write_csv(data, file)
@@ -109,6 +116,8 @@ format_use_data <- function(dataset) {
   sprintf(template, dataset)
 }
 
+#' @rdname use_classification
+#' @export
 modify_data_raw_classification_bridge <- function(dataset) {
   edit_file(file.path("data-raw","classification_bridge.R"))
 
@@ -134,6 +143,8 @@ format_data_dictionary_entry <- function(dataset) {
   sprintf(template, dataset, dataset)
 }
 
+#' @rdname use_classification
+#' @export
 new_data_dictionary_entry <- function(dataset) {
   path <- data_dictionary_path(dataset)
   edit_file(path)
@@ -145,6 +156,8 @@ new_data_dictionary_entry <- function(dataset) {
   invisible(dataset)
 }
 
+#' @rdname use_classification
+#' @export
 modify_test_data_dictionary <- function(dataset) {
   path <- file.path("tests", "testthat", "test-data_dictionary.R")
   edit_file(path)

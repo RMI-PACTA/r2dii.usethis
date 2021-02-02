@@ -2,11 +2,30 @@
 % Please edit documentation in R/use_classification.R
 \name{use_classification}
 \alias{use_classification}
+\alias{modify_news}
+\alias{name_dataset}
+\alias{modify_r_classification_bridge}
+\alias{write_raw_data}
+\alias{modify_data_raw_classification_bridge}
+\alias{new_data_dictionary_entry}
+\alias{modify_test_data_dictionary}
 \title{Use a new sector classification in r2dii.data}
-\arguments{
-\item{prefix}{String. The prefix before _classification, e.g. "psic" in
-\code{psic_classification}.}
+\usage{
+modify_news(dataset, contributor = NULL, issue = NULL)
 
+name_dataset(prefix)
+
+modify_r_classification_bridge(dataset)
+
+write_raw_data(data, dataset)
+
+modify_data_raw_classification_bridge(dataset)
+
+new_data_dictionary_entry(dataset)
+
+modify_test_data_dictionary(dataset)
+}
+\arguments{
 \item{dataset}{String. Name of the new classification dataset you want to
 add, e.g. \code{psic_classification}.}
 
@@ -15,9 +34,10 @@ add, e.g. \code{psic_classification}.}
 
 \item{issue}{String. Number of related issue or PR, e.g. #199.}
 
-\item{data}{A data frame.}
+\item{prefix}{String. The prefix before _classification, e.g. "psic" in
+\code{psic_classification}.}
 
-\item{string}{A string.}
+\item{data}{A data frame.}
 }
 \value{
 Most functions are interactive, and called for their side effects.

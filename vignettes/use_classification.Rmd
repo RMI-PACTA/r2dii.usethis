@@ -1,0 +1,74 @@
+---
+title: "use_classification"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```r
+library(r2dii.usethis)
+library(devtools)
+library(testthat)
+load_all()
+```
+
+The goal of this article is to show how r2dii.usethis can help you add a new
+sector classification bridge to the package r2dii.data. For example, here is how
+I added `psic_classification` following
+https://github.com/2DegreesInvesting/r2dii.data/issues/199 by \@daisy-pacheco.
+
+1. Change working directory into r2dii.data
+
+1. Setup
+
+```r
+prefix <- "psic"
+dataset <- name_dataset(prefix)
+contributor <- "@daisy-pacheco"
+issue <- "#199"
+```
+
+1. Modify and create files.
+
+```r
+modify_news(dataset, contributor, issue)
+
+modify_r_classification_bridge(dataset)
+
+x <- readr::read_tsv("~/Downloads/NSCB_PACTA_bridge - PSIC_PACTA_bridge.tsv")
+write_raw_data(x, dataset)
+
+modify_data_raw_classification_bridge(dataset)
+
+new_data_dictionary_entry(dataset)
+
+modify_test_data_dictionary(dataset)
+```
+
+1. Update data.
+
+```r
+source_data_raw()
+```
+
+1. Update regression tests.
+
+```r
+test()
+snapshot_accept('sector_classifications')
+snapshot_accept('data_dictionary')
+test()
+```
+
+1. Check
+
+```r
+check()
+
+# Inspect helpfile
+?psic_classification
+```
