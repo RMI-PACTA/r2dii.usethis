@@ -9,7 +9,7 @@
 \alias{bridge_update_data_raw}
 \alias{bridge_add_dictionary}
 \alias{bridge_update_snapshots}
-\title{Use a new sector classification in r2dii.data}
+\title{Use a new sector-classification bridge in r2dii.data}
 \usage{
 use_bridge(dataset, data, contributor = NULL, issue = NULL, overwrite = FALSE)
 
@@ -45,7 +45,7 @@ Most functions are interactive, and called for their side effects.
 The return value is usually \code{invisible(dataset)}.
 }
 \description{
-These functions help you add a new sector classification bridge.
+Use a new sector-classification bridge in r2dii.data
 }
 \examples{
 \dontrun{
@@ -59,7 +59,6 @@ source_use_bridge()
 data <- r2dii.data::psic_classification
 
 # The dataset name must have the format [prefix]_classificaton
-dataset <- name_dataset("fake")
 dataset
 
 contributor <- "@somebody"

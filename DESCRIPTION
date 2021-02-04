@@ -21,12 +21,12 @@ Imports:
     glue,
     here,
     r2dii.data,
-    rlang
+    rlang,
+    testthat
 Suggests: 
     covr (>= 3.2.1),
     rmarkdown,
-    spelling,
-    testthat (>= 2.1.0)
+    spelling
 ByteCompile: true
 Encoding: UTF-8
 Language: en-US
