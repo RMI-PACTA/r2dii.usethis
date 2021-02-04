@@ -5,12 +5,12 @@
 #' be used interactively while developing the package, or in CI to regularly
 #' check we can reproduce all datasets we export, and that the result is
 #' consistent with our regression tests.
-#' 
+#'
 #' @param path String. Path in the working directory.
 #' @return `invisible(path)`, as it's called for its side effect.
 #'
 #' @export
-#' 
+#'
 #' @examples
 #' source_data_raw()
 source_data_raw <- function(path = "data-raw") {

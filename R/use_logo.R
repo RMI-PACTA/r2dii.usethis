@@ -1,12 +1,12 @@
 #' Output 2DII's blue logo on a white background.
-#' 
-#' 
+#'
+#'
 #' @source Uploaded to imgur from the file "2DII-Logo-Blue-1000px.png" accessed
 #'   from 2DII's dropbox folder on 2020-04-02.
-#' 
+#'
 #' @param package String of length-1 giving the name of the package to which you
 #'   want to add the logo.
-#'   
+#'
 #' @return `NULL` as it is called for it's side effect.
 #' @export
 #'
