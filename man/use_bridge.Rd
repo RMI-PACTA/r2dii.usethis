@@ -7,8 +7,9 @@
 use_bridge(dataset, data, contributor = NULL, issue = NULL, overwrite = FALSE)
 }
 \arguments{
-\item{dataset}{String. Name of the new classification dataset you want to
-add, with the format \verb{[prefix]_classification}, e.g. \code{psic_classification}.}
+\item{dataset}{String. Name of the dataset, to be used as the prefix of an
+object with the format \verb{[prefix]_classification}, e.g.
+\code{psic_classification}.}
 
 \item{data}{A data frame.}
 
@@ -28,13 +29,15 @@ Use a new sector-classification bridge in r2dii.data
 }
 \examples{
 \dontrun{
-library(r2dii.usethis)
-
+# Setup -------------------------------------------------------------------
+# Work form inside r2dii.data
 fs::dir_copy("../r2dii.data", tempdir())
 tmp <- fs::path(tempdir(), "r2dii.data")
 old <- getwd()
-
 setwd(tmp)
+
+# Call use_bridge ---------------------------------------------------------
+library(r2dii.usethis)
 
 # This is usually a contributed spreadsheet
 dataset <- "fake"
@@ -49,9 +52,10 @@ contributor <- "@somebody"
 issue <- "#123"
 use_bridge(dataset, data, contributor, issue)
 
+# Notice what changed
 system("git status -s")
 
-# Teardown
+# Teardown ----------------------------------------------------------------
 unlink(tmp, recursive = TRUE)
 setwd(old)
 }
