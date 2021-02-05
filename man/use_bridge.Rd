@@ -63,7 +63,7 @@ use_bridge(dataset, data, contributor, issue)
 system("git status -s")
 
 # Teardown ----------------------------------------------------------------
-unlink(tmp, recursive = TRUE)
+unlink(r2dii_data, recursive = TRUE)
 setwd(old)
 }
 }

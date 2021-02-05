@@ -52,7 +52,7 @@
 #' system("git status -s")
 #'
 #' # Teardown ----------------------------------------------------------------
-#' unlink(tmp, recursive = TRUE)
+#' unlink(r2dii_data, recursive = TRUE)
 #' setwd(old)
 #' }
 use_bridge <- function(dataset,
