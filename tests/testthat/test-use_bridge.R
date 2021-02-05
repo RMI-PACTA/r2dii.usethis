@@ -1,8 +1,13 @@
 test_that("produces the expected changes to the r2dii.data repository", {
   # Work form inside r2dii.data
   pkg <- "r2dii.data"
-  ref_path <- test_path(pkg)
+  
+  sibling_path <- function(...) fs::path(fs::path_dir(here::here()), ...)
+  ref_path <- sibling_path(pkg)
+  
+
   tmp_path <- fs::path(tempdir(), pkg)
+  
   fs::dir_copy(ref_path, tempdir())
   
   old <- getwd()
@@ -20,7 +25,9 @@ test_that("produces the expected changes to the r2dii.data repository", {
   contributor <- "@somebody"
   issue <- "#123"
 
-  system("git init && git add . && git commit -m 'init'", intern = TRUE)
+  system("git init", intern = TRUE)
+  system("git add .", intern = TRUE)
+  system("git commit -m 'init' --allow-empty", intern = TRUE)
   purrr::quietly(use_bridge)(dataset, data, contributor, issue)
   diff <- system("git diff --stat", intern = TRUE)
   status <- system("git status -s", intern = TRUE)

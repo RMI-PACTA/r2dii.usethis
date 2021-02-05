@@ -21,6 +21,8 @@ Imports:
     glue,
     r2dii.data
 Suggests: 
+    fs,
+    purrr,
     covr (>= 3.2.1),
     rmarkdown,
     spelling,
