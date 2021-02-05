@@ -22,7 +22,7 @@
 #' tmp <- fs::path(tempdir(), "r2dii.data")
 #' old <- getwd()
 #' setwd(tmp)
-#' 
+#'
 #' # Call use_bridge ---------------------------------------------------------
 #' library(r2dii.usethis)
 #'
@@ -38,7 +38,7 @@
 #' contributor <- "@somebody"
 #' issue <- "#123"
 #' use_bridge(dataset, data, contributor, issue)
-#' 
+#'
 #' # Notice what changed
 #' system("git status -s")
 #'
@@ -58,7 +58,7 @@ use_bridge <- function(dataset,
   bridge_update_news(dataset, contributor = contributor, issue = issue)
   bridge_update_r(dataset)
   bridge_update_data_raw(dataset)
-  
+
   refresh_data()
   message(bridge_todo())
 
