@@ -2,30 +2,9 @@
 % Please edit documentation in R/use_bridge.R
 \name{use_bridge}
 \alias{use_bridge}
-\alias{bridge_update_news}
-\alias{name_dataset}
-\alias{bridge_update_r}
-\alias{bridge_write_raw_data}
-\alias{bridge_update_data_raw}
-\alias{bridge_add_dictionary}
-\alias{bridge_update_snapshots}
 \title{Use a new sector-classification bridge in r2dii.data}
 \usage{
 use_bridge(dataset, data, contributor = NULL, issue = NULL, overwrite = FALSE)
-
-bridge_update_news(dataset, contributor = NULL, issue = NULL)
-
-name_dataset(prefix)
-
-bridge_update_r(dataset)
-
-bridge_write_raw_data(dataset, data, overwrite = FALSE)
-
-bridge_update_data_raw(dataset)
-
-bridge_add_dictionary(dataset, overwrite = FALSE)
-
-bridge_update_snapshots()
 }
 \arguments{
 \item{dataset}{String. Name of the new classification dataset you want to
@@ -49,21 +28,31 @@ Use a new sector-classification bridge in r2dii.data
 }
 \examples{
 \dontrun{
-# This is an internal function aimed at developers
-load_all()
+library(r2dii.usethis)
 
-# The source code does not ship with the package to avoid dependencies
-source_use_bridge()
+fs::dir_copy("../r2dii.data", tempdir())
+tmp <- fs::path(tempdir(), "r2dii.data")
+old <- getwd()
+
+setwd(tmp)
 
 # This is usually a contributed spreadsheet
-data <- r2dii.data::psic_classification
-
-# The dataset name must have the format [prefix]_classificaton
-dataset
-
+dataset <- "fake"
+data <- data.frame(
+  original_code = letters[1:3],
+  code_level = 5,
+  code = as.character(1:3),
+  sector = "not in scope",
+  borderline = FALSE
+)
 contributor <- "@somebody"
 issue <- "#123"
+use_bridge(dataset, data, contributor, issue)
 
-use_bridge(dataset, data, contributor, issue, overwrite = TRUE)
+system("git status -s")
+
+# Teardown
+unlink(tmp, recursive = TRUE)
+setwd(old)
 }
 }

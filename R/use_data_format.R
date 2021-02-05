@@ -9,12 +9,12 @@
 #' @examples
 #' use_data_format("region_isos")
 use_data_format <- function(dataset) {
-  glue::glue("#' @format")
-  glue::glue("#' `{substitute(dataset)}` is a [data.frame] with columns:")
+  glue("#' @format")
+  glue("#' `{substitute(dataset)}` is a [data.frame] with columns:")
 
   dd <- r2dii.data::data_dictionary
   dd <- dd[dd$dataset == dataset, , drop = FALSE]
   dd$dataset <- NULL
 
-  glue::glue_data(dd, "#' * `{column}` ({typeof}): {definition}.")
+  glue_data(dd, "#' * `{column}` ({typeof}): {definition}.")
 }

@@ -15,22 +15,32 @@
 #'
 #' @examples
 #' \dontrun{
-#' # This is an internal function aimed at developers
-#' load_all()
+#' library(r2dii.usethis)
 #'
-#' # The source code does not ship with the package to avoid dependencies
-#' source_use_bridge()
+#' fs::dir_copy("../r2dii.data", tempdir())
+#' tmp <- fs::path(tempdir(), "r2dii.data")
+#' old <- getwd()
+#'
+#' setwd(tmp)
 #'
 #' # This is usually a contributed spreadsheet
-#' data <- r2dii.data::psic_classification
-#'
-#' # The dataset name must have the format [prefix]_classificaton
-#' dataset
-#'
+#' dataset <- "fake"
+#' data <- data.frame(
+#'   original_code = letters[1:3],
+#'   code_level = 5,
+#'   code = as.character(1:3),
+#'   sector = "not in scope",
+#'   borderline = FALSE
+#' )
 #' contributor <- "@somebody"
 #' issue <- "#123"
+#' use_bridge(dataset, data, contributor, issue)
 #'
-#' use_bridge(dataset, data, contributor, issue, overwrite = TRUE)
+#' system("git status -s")
+#'
+#' # Teardown
+#' unlink(tmp, recursive = TRUE)
+#' setwd(old)
 #' }
 use_bridge <- function(dataset,
                        data,
@@ -45,21 +55,20 @@ use_bridge <- function(dataset,
   bridge_update_r(dataset)
   bridge_update_data_raw(dataset)
   suppressMessages(source_data_raw())
-  test_quietly()
-  bridge_update_snapshots()
-  test_quietly()
+
+  message(glue('
+    TODO:
+      test()
+      snapshot_accept("sector_classifications")
+      snapshot_accept("data_dictionary")
+      test()
+  '))
 
   invisible(dataset)
 }
 
-test_quietly <- function() {
-  suppressMessages(test(reporter = ""))
-}
-
-#' @rdname use_bridge
-#' @export
 bridge_update_news <- function(dataset, contributor = NULL, issue = NULL) {
-  path <- here::here("NEWS.md")
+  path <- file.path("NEWS.md")
   old <- readLines(path)
 
   old_head <- old[1]
@@ -82,8 +91,10 @@ format_new_bridge_news <- function(dataset, contributor, issue) {
   paste0(head, tail, ".")
 }
 
-#' @rdname use_bridge
-#' @export
+is_empty <- function(x) {
+  length(x) == 0L
+}
+
 name_dataset <- function(prefix) {
   prefix <- tolower(prefix)
   has_underscore <- grepl("_", prefix)
@@ -119,10 +130,8 @@ format_helpfile <- function(dataset) {
   sprintf(template, dataset)
 }
 
-#' @rdname use_bridge
-#' @export
 bridge_update_r <- function(dataset) {
-  path <- here("R", "classification_bridge.R")
+  path <- file.path("R", "classification_bridge.R")
   append_with(dataset, fun = format_helpfile, path = path)
 
   invisible(dataset)
@@ -139,15 +148,13 @@ append_with <- function(dataset, fun, path) {
   invisible(dataset)
 }
 
-#' @rdname use_bridge
-#' @export
 bridge_write_raw_data <- function(dataset, data, overwrite = FALSE) {
   file <- data_raw_path(dataset)
   stopifnot_new(file, overwrite)
 
   msg <- sprintf("Writing `%s` in %s.", dataset, file)
   message(msg)
-  readr::write_csv(data, file)
+  write.csv(data, file, row.names = FALSE)
 
   invisible(data)
 }
@@ -165,7 +172,7 @@ stopifnot_new <- function(file, overwrite) {
 }
 
 data_raw_path <- function(dataset) {
-  here::here("data-raw", glue("{dataset}.csv"))
+  file.path("data-raw", glue("{dataset}.csv"))
 }
 
 format_use_data <- function(dataset) {
@@ -178,17 +185,15 @@ format_use_data <- function(dataset) {
   sprintf(template, dataset)
 }
 
-#' @rdname use_bridge
-#' @export
 bridge_update_data_raw <- function(dataset) {
-  path <- here("data-raw", "classification_bridge.R")
+  path <- file.path("data-raw", "classification_bridge.R")
   append_with(dataset, fun = format_use_data, path = path)
 
   invisible(dataset)
 }
 
 data_dictionary_path <- function(dataset) {
-  here::here("data-raw", "data_dictionary", glue("{dataset}.csv"))
+  file.path("data-raw", "data_dictionary", glue("{dataset}.csv"))
 }
 
 format_data_dictionary_entry <- function(dataset) {
@@ -203,8 +208,6 @@ format_data_dictionary_entry <- function(dataset) {
   sprintf(template, dataset, dataset)
 }
 
-#' @rdname use_bridge
-#' @export
 bridge_add_dictionary <- function(dataset, overwrite = FALSE) {
   file <- data_dictionary_path(dataset)
   stopifnot_new(file, overwrite)
@@ -219,7 +222,7 @@ bridge_add_dictionary <- function(dataset, overwrite = FALSE) {
 
 stopifnot_has_bridge_cols <- function(dataset) {
   raw_data <- data_raw_path(dataset)
-  actual <- names(utils::read.csv(raw_data, nrows = 1L))
+  actual <- names(read.csv(raw_data, nrows = 1L))
   expected <- bridge_cols()
 
   has_bridge_cols <- identical(expected, actual)
@@ -242,11 +245,4 @@ commas <- function(x) {
 
 bridge_cols <- function() {
   c("original_code", "code_level", "code", "sector", "borderline")
-}
-
-#' @rdname use_bridge
-#' @export
-bridge_update_snapshots <- function() {
-  snapshot_accept("sector_classifications")
-  snapshot_accept("data_dictionary")
 }

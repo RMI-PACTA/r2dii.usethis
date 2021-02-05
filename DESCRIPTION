@@ -19,14 +19,13 @@ BugReports:
     https://github.com/2DegreesInvesting/r2dii.usethis/issues
 Imports: 
     glue,
-    here,
     r2dii.data,
-    rlang,
-    testthat
+    readr
 Suggests: 
     covr (>= 3.2.1),
     rmarkdown,
-    spelling
+    spelling,
+    testthat
 ByteCompile: true
 Encoding: UTF-8
 Language: en-US
