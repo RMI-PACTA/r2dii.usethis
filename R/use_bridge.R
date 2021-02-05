@@ -51,7 +51,7 @@ use_bridge <- function(dataset,
                        contributor = NULL,
                        issue = NULL,
                        overwrite = FALSE) {
-  dataset <- name_dataset(dataset)
+  dataset <- bridge_name(dataset)
 
   bridge_write_raw_data(dataset, data, overwrite = overwrite)
   bridge_add_dictionary(dataset, overwrite = overwrite)
@@ -63,6 +63,20 @@ use_bridge <- function(dataset,
   message(bridge_todo())
 
   invisible(dataset)
+}
+
+bridge_name <- function(prefix) {
+  prefix <- tolower(prefix)
+  has_underscore <- grepl("_", prefix)
+
+  if (has_underscore) {
+    stop(
+      "`prefix` '", prefix, "' must not contain unterscore '_'.",
+      call. = FALSE
+    )
+  }
+
+  glue("{prefix}_classification")
 }
 
 bridge_update_news <- function(dataset, contributor = NULL, issue = NULL) {
@@ -91,20 +105,6 @@ format_new_bridge_news <- function(dataset, contributor, issue) {
 
 is_empty <- function(x) {
   length(x) == 0L
-}
-
-name_dataset <- function(prefix) {
-  prefix <- tolower(prefix)
-  has_underscore <- grepl("_", prefix)
-
-  if (has_underscore) {
-    stop(
-      "`prefix` '", prefix, "' must not contain unterscore '_'.",
-      call. = FALSE
-    )
-  }
-
-  glue("{prefix}_classification")
 }
 
 format_helpfile <- function(dataset) {
