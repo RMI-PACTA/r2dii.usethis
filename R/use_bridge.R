@@ -58,15 +58,9 @@ use_bridge <- function(dataset,
   bridge_update_news(dataset, contributor = contributor, issue = issue)
   bridge_update_r(dataset)
   bridge_update_data_raw(dataset)
-  suppressMessages(source_data_raw())
-
-  message(glue('
-    TODO:
-      test()
-      snapshot_accept("sector_classifications")
-      snapshot_accept("data_dictionary")
-      test()
-  '))
+  
+  refresh_data()
+  message(bridge_todo())
 
   invisible(dataset)
 }
@@ -249,4 +243,24 @@ commas <- function(x) {
 
 bridge_cols <- function() {
   c("original_code", "code_level", "code", "sector", "borderline")
+}
+
+bridge_todo <- function() {
+  glue('
+    TODO:
+      test()
+      snapshot_accept("sector_classifications")
+      snapshot_accept("data_dictionary")
+      test()
+  ')
+}
+
+refresh_data <- function() {
+  # One known warning is particularly annoying
+  suppressWarnings(
+    # Avoid clutter
+    suppressMessages(
+      source_data_raw()
+    )
+  )
 }
