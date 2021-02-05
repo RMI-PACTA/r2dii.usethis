@@ -19,8 +19,7 @@ BugReports:
     https://github.com/2DegreesInvesting/r2dii.usethis/issues
 Imports: 
     glue,
-    r2dii.data,
-    readr
+    r2dii.data
 Suggests: 
     covr (>= 3.2.1),
     rmarkdown,
