@@ -13,7 +13,7 @@
 #' @examples
 #' use_logo("packagename")
 use_logo <- function(package) {
-  glue::glue(
+  glue(
     "* Add logo to your README with the following html:
       # {package} <a href='https://github.com/2DegreesInvesting/{package}'>\\
       <img src='https://imgur.com/A5ASZPE.png' align='right' height='43' /></a>"

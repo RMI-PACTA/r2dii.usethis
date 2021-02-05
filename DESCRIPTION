@@ -24,7 +24,7 @@ Suggests:
     covr (>= 3.2.1),
     rmarkdown,
     spelling,
-    testthat (>= 2.1.0)
+    testthat
 ByteCompile: true
 Encoding: UTF-8
 Language: en-US

@@ -1,2 +1,0 @@
-#' @importFrom glue glue
-NULL
