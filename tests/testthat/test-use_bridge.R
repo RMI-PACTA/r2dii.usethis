@@ -6,6 +6,7 @@ test_that("produces the expected changes to the r2dii.data repository", {
   tmp_path <- fs::path(tempdir(), pkg)
   tryCatch(
     copy_into_tempdir(sibling_path(pkg)),
+    # R CMD check doesn't know about siblings
     error = function(e) copy_into_tempdir(test_path(pkg))
   )
   
