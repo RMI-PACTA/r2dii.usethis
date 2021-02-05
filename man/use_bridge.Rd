@@ -36,14 +36,14 @@ the source code of the package r2dii.data.
 }
 \examples{
 \dontrun{
-# Setup -------------------------------------------------------------------
-# Work form inside r2dii.data
-fs::dir_copy("../r2dii.data", tempdir())
-tmp <- fs::path(tempdir(), "r2dii.data")
+# Work form inside r2dii.data (here I use from a temporary copy)
 old <- getwd()
-setwd(tmp)
+r2dii_data <- file.path(tempdir(), "r2dii.data")
+fs::dir_create(r2dii_data)
+setwd(r2dii_data)
+system("git clone https://github.com/2DegreesInvesting/r2dii.data.git -- .")
+devtools::load_all()
 
-# Call use_bridge ---------------------------------------------------------
 library(r2dii.usethis)
 
 # This is usually a contributed spreadsheet
@@ -63,7 +63,7 @@ use_bridge(dataset, data, contributor, issue)
 system("git status -s")
 
 # Teardown ----------------------------------------------------------------
-unlink(tmp, recursive = TRUE)
+unlink(r2dii_data, recursive = TRUE)
 setwd(old)
 }
 }
