@@ -40,7 +40,14 @@
 
 
 <meta property="og:title" content="Use a new sector-classification bridge in r2dii.data — use_bridge" />
-<meta property="og:description" content="Use a new sector-classification bridge in r2dii.data" />
+<meta property="og:description" content="This is a developer-facing function that helps create the pull request you
+need to add a new sector-classification bridge to the package r2dii.data
+(example). It
+does create a commit but it does change your working tree: It adds new files
+and modifies existing files. If the result is now what you want, you may
+restore the last commit with something like git checkout . &amp;amp;&amp;amp; git clean -i.
+Normally you would call this function from inside the project that contains
+the source code of the package r2dii.data." />
 
 
 
@@ -131,7 +138,14 @@
     </div>
 
     <div class="ref-description">
-    <p>Use a new sector-classification bridge in r2dii.data</p>
+    <p>This is a developer-facing function that helps create the pull request you
+need to add a new sector-classification bridge to the package r2dii.data
+(<a href='https://github.com/2DegreesInvesting/r2dii.data/pull/200'>example</a>). It
+does create a commit but it does change your working tree: It adds new files
+and modifies existing files. If the result is now what you want, you may
+restore the last commit with something like <code>git checkout . &amp;&amp; git clean -i</code>.
+Normally you would call this function from inside the project that contains
+the source code of the package r2dii.data.</p>
     </div>
 
     <pre class="usage"><span class='fu'>use_bridge</span><span class='op'>(</span><span class='va'>dataset</span>, <span class='va'>data</span>, contributor <span class='op'>=</span> <span class='cn'>NULL</span>, issue <span class='op'>=</span> <span class='cn'>NULL</span>, overwrite <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
@@ -141,8 +155,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataset</th>
-      <td><p>String. Name of the dataset, to be used as the prefix of an
-object with the format <code>[prefix]_classification</code>, e.g.
+      <td><p>String. Name of the dataset. This is used as the "prefix" to
+for an object-name of the form <code>[prefix]_classification</code>, e.g.
 <code>psic_classification</code>.</p></td>
     </tr>
     <tr>
@@ -166,8 +180,8 @@ object with the format <code>[prefix]_classification</code>, e.g.
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Most functions are interactive, and called for their side effects.
-The return value is usually <code><a href='https://rdrr.io/r/base/invisible.html'>invisible(dataset)</a></code>.</p>
+    <p>This function is called for its side effects of adding and modifying
+files. It returns the first argument invisibly.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
