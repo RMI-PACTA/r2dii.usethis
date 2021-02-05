@@ -17,7 +17,7 @@ Printed output that you may copy and paste into a GitHub issue.
 A checklist to add new data to the package r2dii.data
 }
 \examples{
-# Maybe copy and paste into a GitHub issue. 
+# Maybe copy and paste into a GitHub issue.
 # See `?usethis::browse_github_issues()`
 use_r2dii_data()
 
