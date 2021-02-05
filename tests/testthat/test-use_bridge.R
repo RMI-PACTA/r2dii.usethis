@@ -12,7 +12,7 @@ test_that("produces the expected changes to the r2dii.data repository", {
   old <- getwd()
   setwd(tmp_path)
   devtools::load_all()
-  
+
   dataset <- "fake"
   data <- data.frame(
     original_code = letters[1:3],
