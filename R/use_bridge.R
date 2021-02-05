@@ -52,7 +52,6 @@ use_bridge <- function(dataset,
                        issue = NULL,
                        overwrite = FALSE) {
   dataset <- bridge_name(dataset)
-
   bridge_write_raw_data(dataset, data, overwrite = overwrite)
   bridge_add_dictionary(dataset, overwrite = overwrite)
   bridge_update_news(dataset, contributor = contributor, issue = issue)
@@ -90,6 +89,18 @@ bridge_write_raw_data <- function(dataset, data, overwrite = FALSE) {
   invisible(data)
 }
 
+bridge_add_dictionary <- function(dataset, overwrite = FALSE) {
+  file <- data_dictionary_path(dataset)
+  stopifnot_new(file, overwrite)
+  stopifnot_has_bridge_cols(dataset)
+
+  message("Writing:", file)
+  lines <- format_data_dictionary_entry(dataset)
+  writeLines(lines, file)
+
+  invisible(dataset)
+}
+
 bridge_update_news <- function(dataset, contributor = NULL, issue = NULL) {
   path <- file.path("NEWS.md")
   old <- readLines(path)
@@ -103,6 +114,40 @@ bridge_update_news <- function(dataset, contributor = NULL, issue = NULL) {
   writeLines(news, path)
 
   invisible(dataset)
+}
+
+bridge_update_r <- function(dataset) {
+  path <- file.path("R", "classification_bridge.R")
+  append_with(dataset, fun = format_helpfile, path = path)
+
+  invisible(dataset)
+}
+
+bridge_update_data_raw <- function(dataset) {
+  path <- file.path("data-raw", "classification_bridge.R")
+  append_with(dataset, fun = format_use_data, path = path)
+
+  invisible(dataset)
+}
+
+refresh_data <- function() {
+  # One known warning is particularly annoying
+  suppressWarnings(
+    # Avoid clutter
+    suppressMessages(
+      source_data_raw()
+    )
+  )
+}
+
+bridge_todo <- function() {
+  glue('
+    TODO:
+      test()
+      snapshot_accept("sector_classifications")
+      snapshot_accept("data_dictionary")
+      test()
+  ')
 }
 
 format_new_bridge_news <- function(dataset, contributor, issue) {
@@ -139,12 +184,6 @@ format_helpfile <- function(dataset) {
   sprintf(template, dataset)
 }
 
-bridge_update_r <- function(dataset) {
-  path <- file.path("R", "classification_bridge.R")
-  append_with(dataset, fun = format_helpfile, path = path)
-
-  invisible(dataset)
-}
 
 append_with <- function(dataset, fun, path) {
   old <- readLines(path)
@@ -183,13 +222,6 @@ format_use_data <- function(dataset) {
   sprintf(template, dataset)
 }
 
-bridge_update_data_raw <- function(dataset) {
-  path <- file.path("data-raw", "classification_bridge.R")
-  append_with(dataset, fun = format_use_data, path = path)
-
-  invisible(dataset)
-}
-
 data_dictionary_path <- function(dataset) {
   file.path("data-raw", "data_dictionary", glue("{dataset}.csv"))
 }
@@ -204,18 +236,6 @@ format_data_dictionary_entry <- function(dataset) {
     "%s,borderline,logical,Flag indicating if 2dii sector and classification code are a borderline match. The value TRUE indicates that the match is uncertain between the 2dii sector and the classification. The value FALSE indicates that the match is certainly perfect or the classification is certainly out of 2dii's scope."
   )
   sprintf(template, dataset, dataset)
-}
-
-bridge_add_dictionary <- function(dataset, overwrite = FALSE) {
-  file <- data_dictionary_path(dataset)
-  stopifnot_new(file, overwrite)
-  stopifnot_has_bridge_cols(dataset)
-
-  message("Writing:", file)
-  lines <- format_data_dictionary_entry(dataset)
-  writeLines(lines, file)
-
-  invisible(dataset)
 }
 
 stopifnot_has_bridge_cols <- function(dataset) {
@@ -245,22 +265,4 @@ bridge_cols <- function() {
   c("original_code", "code_level", "code", "sector", "borderline")
 }
 
-bridge_todo <- function() {
-  glue('
-    TODO:
-      test()
-      snapshot_accept("sector_classifications")
-      snapshot_accept("data_dictionary")
-      test()
-  ')
-}
 
-refresh_data <- function() {
-  # One known warning is particularly annoying
-  suppressWarnings(
-    # Avoid clutter
-    suppressMessages(
-      source_data_raw()
-    )
-  )
-}
