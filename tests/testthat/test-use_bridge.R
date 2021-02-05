@@ -1,6 +1,11 @@
 test_that("produces the expected changes to the r2dii.data repository", {
   sibling_path <- function(...) fs::path(fs::path_dir(here::here()), ...)
-  copy_into_tempdir <- function(path) fs::dir_copy(path, tempdir())
+  copy_into_tempdir <- function(path) {
+    tmp <- fs::path(tempdir(), path)
+    if (fs::dir_exists(tmp)) fs::dir_delete(tmp)
+    fs::dir_copy(path, tempdir())
+    invisible(path)
+  }
 
   pkg <- "r2dii.data"
   tmp_path <- fs::path(tempdir(), pkg)
