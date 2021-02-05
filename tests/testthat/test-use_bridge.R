@@ -30,7 +30,7 @@ test_that("produces the expected changes to the r2dii.data repository", {
   contributor <- "@somebody"
   issue <- "#123"
 
-  system("git init", intern = TRUE)
+  system("git init -b master", intern = TRUE)
   system("git add .", intern = TRUE)
   system("git commit -m 'init' --allow-empty", intern = TRUE)
   purrr::quietly(use_bridge)(dataset, data, contributor, issue)
