@@ -2,7 +2,6 @@
 
 export(source_data_raw)
 export(use_bridge)
-export(use_data_format)
 export(use_logo)
 export(use_r2dii_data)
 importFrom(glue,glue)
