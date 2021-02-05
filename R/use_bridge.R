@@ -79,6 +79,17 @@ bridge_name <- function(prefix) {
   glue("{prefix}_classification")
 }
 
+bridge_write_raw_data <- function(dataset, data, overwrite = FALSE) {
+  file <- data_raw_path(dataset)
+  stopifnot_new(file, overwrite)
+
+  msg <- sprintf("Writing `%s` in %s.", dataset, file)
+  message(msg)
+  write.csv(data, file, row.names = FALSE)
+
+  invisible(data)
+}
+
 bridge_update_news <- function(dataset, contributor = NULL, issue = NULL) {
   path <- file.path("NEWS.md")
   old <- readLines(path)
@@ -144,17 +155,6 @@ append_with <- function(dataset, fun, path) {
   writeLines(out, path)
 
   invisible(dataset)
-}
-
-bridge_write_raw_data <- function(dataset, data, overwrite = FALSE) {
-  file <- data_raw_path(dataset)
-  stopifnot_new(file, overwrite)
-
-  msg <- sprintf("Writing `%s` in %s.", dataset, file)
-  message(msg)
-  write.csv(data, file, row.names = FALSE)
-
-  invisible(data)
 }
 
 stopifnot_new <- function(file, overwrite) {
