@@ -10,9 +10,9 @@
 #'
 #' @return Most functions are interactive, and called for their side effects.
 #' The return value is usually `invisible(dataset)`.
-#' 
+#'
 #' @export
-#' 
+#'
 #' @examples
 #' \dontrun{
 #' # This is an internal function aimed at developers
@@ -38,7 +38,7 @@ use_bridge <- function(dataset,
                        issue = NULL,
                        overwrite = FALSE) {
   dataset <- name_dataset(dataset)
-  
+
   bridge_write_raw_data(dataset, data, overwrite = overwrite)
   bridge_add_dictionary(dataset, overwrite = overwrite)
   bridge_update_news(dataset, contributor = contributor, issue = issue)
@@ -87,14 +87,14 @@ format_new_bridge_news <- function(dataset, contributor, issue) {
 name_dataset <- function(prefix) {
   prefix <- tolower(prefix)
   has_underscore <- grepl("_", prefix)
-  
+
   if (has_underscore) {
     stop(
-      "`prefix` '", prefix, "' must not contain unterscore '_'.", 
+      "`prefix` '", prefix, "' must not contain unterscore '_'.",
       call. = FALSE
     )
   }
-  
+
   glue("{prefix}_classification")
 }
 
@@ -181,7 +181,7 @@ format_use_data <- function(dataset) {
 #' @rdname use_bridge
 #' @export
 bridge_update_data_raw <- function(dataset) {
-  path <- here("data-raw","classification_bridge.R")
+  path <- here("data-raw", "classification_bridge.R")
   append_with(dataset, fun = format_use_data, path = path)
 
   invisible(dataset)
