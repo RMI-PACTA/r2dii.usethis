@@ -25,14 +25,14 @@
 #'
 #' @examples
 #' \dontrun{
-#' # Setup -------------------------------------------------------------------
-#' # Work form inside r2dii.data
-#' fs::dir_copy("../r2dii.data", tempdir())
-#' tmp <- fs::path(tempdir(), "r2dii.data")
+#' # Work form inside r2dii.data (here I use from a temporary copy)
 #' old <- getwd()
-#' setwd(tmp)
-#'
-#' # Call use_bridge ---------------------------------------------------------
+#' r2dii_data <- file.path(tempdir(), "r2dii.data")
+#' fs::dir_create(r2dii_data)
+#' setwd(r2dii_data)
+#' system("git clone https://github.com/2DegreesInvesting/r2dii.data.git -- .")
+#' devtools::load_all()
+#' 
 #' library(r2dii.usethis)
 #'
 #' # This is usually a contributed spreadsheet
