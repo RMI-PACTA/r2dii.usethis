@@ -32,7 +32,7 @@
 #' setwd(r2dii_data)
 #' system("git clone https://github.com/2DegreesInvesting/r2dii.data.git -- .")
 #' devtools::load_all()
-#' 
+#'
 #' library(r2dii.usethis)
 #'
 #' # This is usually a contributed spreadsheet
