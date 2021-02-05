@@ -142,13 +142,13 @@ refresh_data <- function() {
 
 bridge_todo <- function() {
   txt <- c(
-    'TODO:',
-    '  test()',
-    '  snapshot_accept("sector_classifications")',
-    '  snapshot_accept("data_dictionary")',
-    '  test()'
+    "TODO:",
+    "  devtools::test()",
+    "  testthat::snapshot_accept('sector_classifications')",
+    "  testthat::snapshot_accept('data_dictionary')",
+    "  devtools::test()"
   )
-  
+
   format_line(txt)
 }
 
@@ -268,5 +268,3 @@ commas <- function(x) {
 bridge_cols <- function() {
   c("original_code", "code_level", "code", "sector", "borderline")
 }
-
-
