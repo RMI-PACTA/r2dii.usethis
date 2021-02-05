@@ -1,4 +1,4 @@
-test_that("produces the expected side effects", {
+test_that("produces the expected changes to the r2dii.data repository", {
   # Work form inside r2dii.data
   pkg <- "r2dii.data"
   ref_path <- test_path(pkg)
