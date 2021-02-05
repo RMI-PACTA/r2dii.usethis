@@ -20,7 +20,8 @@ BugReports:
 Imports: 
     glue,
     r2dii.data,
-    dplyr
+    dplyr,
+    readr
 Suggests: 
     fs,
     here,

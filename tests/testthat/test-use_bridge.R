@@ -1,19 +1,12 @@
 test_that("produces the expected changes to the r2dii.data repository", {
-  # Work form inside r2dii.data
-  pkg <- "r2dii.data"
-  
   sibling_path <- function(...) fs::path(fs::path_dir(here::here()), ...)
-  ref_path <- tryCatch(
-    sibling_path(pkg), # R CMD check
-    
-    error = function(e) test_path(pkg)
-  )
-
-  tmp_path <- fs::path(tempdir(), pkg)
+  copy_into_tempdir <- function(path) fs::dir_copy(path, tempdir())
   
+  pkg <- "r2dii.data"
+  tmp_path <- fs::path(tempdir(), pkg)
   tryCatch(
-    fs::dir_copy(sibling_path(pkg), tempdir()),
-    error = function(e) fs::dir_copy(test_path(pkg), tempdir())
+    copy_into_tempdir(sibling_path(pkg)),
+    error = function(e) copy_into_tempdir(test_path(pkg))
   )
   
   old <- getwd()
