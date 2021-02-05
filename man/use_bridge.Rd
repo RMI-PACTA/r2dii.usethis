@@ -7,8 +7,8 @@
 use_bridge(dataset, data, contributor = NULL, issue = NULL, overwrite = FALSE)
 }
 \arguments{
-\item{dataset}{String. Name of the dataset, to be used as the prefix of an
-object with the format \verb{[prefix]_classification}, e.g.
+\item{dataset}{String. Name of the dataset. This is used as the "prefix" to
+for an object-name of the form \verb{[prefix]_classification}, e.g.
 \code{psic_classification}.}
 
 \item{data}{A data frame.}
@@ -21,11 +21,18 @@ object with the format \verb{[prefix]_classification}, e.g.
 \item{overwrite}{Logical. Allow overwriting data?}
 }
 \value{
-Most functions are interactive, and called for their side effects.
-The return value is usually \code{invisible(dataset)}.
+This function is called for its side effects of adding and modifying
+files. It returns the first argument invisibly.
 }
 \description{
-Use a new sector-classification bridge in r2dii.data
+This is a developer-facing function that helps create the pull request you
+need to add a new sector-classification bridge to the package r2dii.data
+(\href{https://github.com/2DegreesInvesting/r2dii.data/pull/200}{example}). It
+does create a commit but it does change your working tree: It adds new files
+and modifies existing files. If the result is now what you want, you may
+restore the last commit with something like \verb{git checkout . && git clean -i}.
+Normally you would call this function from inside the project that contains
+the source code of the package r2dii.data.
 }
 \examples{
 \dontrun{
