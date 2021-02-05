@@ -1,7 +1,16 @@
 #' Use a new sector-classification bridge in r2dii.data
 #'
-#' @param dataset String. Name of the dataset, to be used as the prefix of an
-#'   object with the format `[prefix]_classification`, e.g.
+#' This is a developer-facing function that helps create the pull request you
+#' need to add a new sector-classification bridge to the package r2dii.data
+#' ([example](https://github.com/2DegreesInvesting/r2dii.data/pull/200)). It
+#' does create a commit but it does change your working tree: It adds new files
+#' and modifies existing files. If the result is now what you want, you may
+#' restore the last commit with something like `git checkout . && git clean -i`.
+#' Normally you would call this function from inside the project that contains
+#' the source code of the package r2dii.data.
+#'
+#' @param dataset String. Name of the dataset. This is used as the "prefix" to
+#'   for an object-name of the form `[prefix]_classification`, e.g.
 #'   `psic_classification`.
 #' @param data A data frame.
 #' @param contributor String. Name of a contributor to thank in NEWS.md, e.g.
@@ -9,8 +18,8 @@
 #' @param issue String. Number of related issue or PR, e.g. #199.
 #' @param overwrite Logical. Allow overwriting data?
 #'
-#' @return Most functions are interactive, and called for their side effects.
-#' The return value is usually `invisible(dataset)`.
+#' @return This function is called for its side effects of adding and modifying
+#'   files. It returns the first argument invisibly.
 #'
 #' @export
 #'
@@ -22,7 +31,7 @@
 #' tmp <- fs::path(tempdir(), "r2dii.data")
 #' old <- getwd()
 #' setwd(tmp)
-#' 
+#'
 #' # Call use_bridge ---------------------------------------------------------
 #' library(r2dii.usethis)
 #'
@@ -38,7 +47,7 @@
 #' contributor <- "@somebody"
 #' issue <- "#123"
 #' use_bridge(dataset, data, contributor, issue)
-#' 
+#'
 #' # Notice what changed
 #' system("git status -s")
 #'
