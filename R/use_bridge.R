@@ -141,14 +141,18 @@ refresh_data <- function() {
 }
 
 bridge_todo <- function() {
-  glue('
-    TODO:
-      test()
-      snapshot_accept("sector_classifications")
-      snapshot_accept("data_dictionary")
-      test()
-  ')
+  txt <- c(
+    'TODO:',
+    '  test()',
+    '  snapshot_accept("sector_classifications")',
+    '  snapshot_accept("data_dictionary")',
+    '  test()'
+  )
+  
+  format_line(txt)
 }
+
+format_line <- function(x) paste0(x, collapse = "\n")
 
 format_new_bridge_news <- function(dataset, contributor, issue) {
   head <- glue("* New dataset `{dataset}_classification`")
