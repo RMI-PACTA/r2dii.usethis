@@ -25,7 +25,6 @@ Suggests:
     covr (>= 3.2.1),
     devtools,
     fs,
-    here,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0),
