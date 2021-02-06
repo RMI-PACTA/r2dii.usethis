@@ -1,22 +1,19 @@
 test_that("produces the expected changes to the r2dii.data repository", {
-  sibling_path <- function(...) fs::path(fs::path_dir(here::here()), ...)
+  system <- function(x) base::system(x, intern = TRUE)
   copy_into_tempdir <- function(path) {
     tmp <- fs::path(tempdir(), path)
     if (fs::dir_exists(tmp)) fs::dir_delete(tmp)
     fs::dir_copy(path, tempdir())
     invisible(path)
   }
-
+  
   pkg <- "r2dii.data"
   tmp_path <- fs::path(tempdir(), pkg)
-  tryCatch(
-    copy_into_tempdir(sibling_path(pkg)),
-    # R CMD check doesn't know about siblings
-    error = function(e) copy_into_tempdir(test_path(pkg))
-  )
-
+  copy_into_tempdir(test_path("r2dii.data"))
+  
   old <- getwd()
   setwd(tmp_path)
+
   devtools::load_all()
 
   dataset <- "fake"
@@ -30,21 +27,14 @@ test_that("produces the expected changes to the r2dii.data repository", {
   contributor <- "@somebody"
   issue <- "#123"
 
-  system("git init -b master", intern = TRUE)
-  system("git add .", intern = TRUE)
-  system("git commit -m 'init' --allow-empty", intern = TRUE)
+  system("git init -b master && git add . && git commit -m 'init'")
   purrr::quietly(use_bridge)(dataset, data, contributor, issue)
-  diff <- system("git diff --stat", intern = TRUE)
-  status <- system("git status -s", intern = TRUE)
-  actual <- c(diff, status)
-
+  actual <- system("git diff --stat && git status -s")
   setwd(old)
-  out_path <- test_path("output", "output-use_bridge.md")
-  # writeLines(actual, out_path)
-
-  expected <- readLines(out_path)
+  reference <- test_path("output", "output-use_bridge.md")
+  expected <- readLines(reference)
+  
   expect_equal(actual, expected)
-
-  # Cleanup
+  
   fs::dir_delete(tmp_path)
 })
