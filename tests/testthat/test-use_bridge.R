@@ -30,7 +30,7 @@ test_that("produces the expected changes to the r2dii.data repository", {
   issue <- "#123"
 
   system("git init -b master && git add . && git commit -m 'init'")
-  purrr::quietly(use_bridge)(dataset, data, contributor, issue)
+  suppressMessages(use_bridge(dataset, data, contributor, issue))
   actual <- system("git diff --stat && git status -s")
   setwd(old)
   reference <- test_path("output", "output-use_bridge.md")
