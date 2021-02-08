@@ -164,7 +164,7 @@ bridge_todo <- function() {
 format_line <- function(x) paste0(x, collapse = "\n")
 
 format_new_bridge_news <- function(dataset, contributor, issue) {
-  head <- glue("* New dataset `{dataset}_classification`")
+  head <- glue("* New dataset `{dataset}`")
   tail <- trimws(paste(contributor, issue))
   if (!is_empty(tail)) {
     tail <- paste0(" (", tail, ")", collapse = "")
