@@ -41,7 +41,7 @@ test_that("produces the expected changes to the r2dii.data repository", {
   fs::dir_delete(tmp_path)
 })
 
-test_that("produces the expected changes to the r2dii.data repository", {
+test_that("gives news about the correct name", {
   # The diff is quite different and I can't figure out why
   skip_on_ci()
 
