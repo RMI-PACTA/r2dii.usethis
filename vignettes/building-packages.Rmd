@@ -40,18 +40,12 @@ library(usethis)
 library(devtools)
 ```
 
-* For public packages add a common license (see `?usethis::use_*_license()`).
+* For private packages use `use_proprietary_license()`. For public packages
+add a common license (see `?usethis::use_*_license()`).
 
 ```r
 # Data packages should instead use CCO (https://r-pkgs.org/license.html)
 use_mit_license()
-```
-
-* For private packages maybe add "Private package" in a `LICENSE` file at the root.
-
-```bash
-# bash
-echo "Private package." > LICENSE
 ```
 
 * Allow opening the GitHub repo with `browse_github()`.
