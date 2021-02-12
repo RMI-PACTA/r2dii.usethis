@@ -127,9 +127,9 @@ check()
 
 ## What else?
 
-The r2dii.usethis includes many more [templates](https://github.com/2DegreesInvesting/r2dii.usethis/tree/master/inst/templates)
+The r2dii.usethis includes many more [templates](https://github.com/2DegreesInvesting/r2dii.usethis/tree/master/inst/templates).
 
-For inspiration you may also see [this post](https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/)
+For inspiration you may also see [this post](https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/).
 
 The ultimate source is the R packages book:
 
