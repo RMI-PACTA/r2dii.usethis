@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -55,7 +57,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/maurolepore">
+  <a href="https://github.com/maurolepore" class="external-link">
     <span class="fas fa-gavel"></span>
      
   </a>
@@ -67,7 +69,7 @@
   </a>
 </li>
 <li>
-  <a href="https://2degreesinvesting.github.io/r2dii/index.html">r2dii</a>
+  <a href="https://2degreesinvesting.github.io/r2dii/index.html" class="external-link">r2dii</a>
 </li>
       </ul>
 </div>
@@ -93,10 +95,10 @@
     
     
 <p>The goal of this article is to show how to build r2dii-like packages. All code should run in R (default), or a Unix-like terminal (commented with <code># bash</code>).</p>
-<p>For a more general explanation see <a href="https://r-pkgs.org/whole-game.html" class="uri">https://r-pkgs.org/whole-game.html</a>.</p>
+<p>For a more general explanation see <a href="https://r-pkgs.org/whole-game.html" class="external-link uri">https://r-pkgs.org/whole-game.html</a>.</p>
 <div id="setup" class="section level2">
 <h2 class="hasAnchor">
-<a href="#setup" class="anchor"></a>Setup</h2>
+<a href="#setup" class="anchor" aria-hidden="true"></a>Setup</h2>
 <ul>
 <li>Setup a GitHub repo, clone it, and setup the remote: and link it to RStudio
 <ul>
@@ -108,50 +110,50 @@
 <li>Transform the project into an R package.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html">create_package</a></span><span class="op">(</span><span class="st">"../r2dii.packagename"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html" class="external-link">create_package</a></span><span class="op">(</span><span class="st">"../r2dii.packagename"</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>A new RStudio session will open automatically.</li>
 </ul>
 </div>
 <div id="add-minimal-infrastructure" class="section level2">
 <h2 class="hasAnchor">
-<a href="#add-minimal-infrastructure" class="anchor"></a>Add minimal infrastructure</h2>
+<a href="#add-minimal-infrastructure" class="anchor" aria-hidden="true"></a>Add minimal infrastructure</h2>
 <ul>
 <li>Attach useful packages.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/2DegreesInvesting/r2dii.usethis">r2dii.usethis</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://usethis.r-lib.org">usethis</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/2DegreesInvesting/r2dii.usethis">r2dii.usethis</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usethis.r-lib.org" class="external-link">usethis</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></code></pre></div>
 <ul>
 <li>For public packages add a common license (see <code>?usethis::use_*_license()</code>).</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html">use_gpl3_license</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html" class="external-link">use_gpl3_license</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># bash</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</span></code></pre></div>
 <ul>
-<li>Allow opening the GitHub repo with <code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code>.</li>
+<li>Allow opening the GitHub repo with <code><a href="https://usethis.r-lib.org/reference/browse-this.html" class="external-link">browse_github()</a></code>.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/use_github_links.html">use_github_links()</a></code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/use_github_links.html" class="external-link">use_github_links()</a></code></pre>
 <ul>
 <li>Enable markdown syntax in R documentation.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/use_roxygen_md.html">use_roxygen_md()</a></code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/use_roxygen_md.html" class="external-link">use_roxygen_md()</a></code></pre>
 <ul>
 <li>Edit the DESCRIPTION file manually.</li>
 <li>Tidy DESCRIPTION.</li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/tidyverse.html">use_tidy_description()</a></code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/tidyverse.html" class="external-link">use_tidy_description()</a></code></pre>
 <ul>
 <li>Check.</li>
 </ul>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Control + Shift + E</span>
-<span class="fu"><a href="https://devtools.r-lib.org//reference/check.html">check</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://devtools.r-lib.org//reference/check.html" class="external-link">check</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <ul>
 <li><p>Confirm that R CMD check runs with 0 errors, 0 warnings, and 0 notes.</p></li>
 <li>
@@ -162,48 +164,48 @@
 </ul>
 </li>
 </ul>
-<pre><code><a href="https://usethis.r-lib.org/reference/browse-this.html">browse_github()</a></code></pre>
+<pre><code><a href="https://usethis.r-lib.org/reference/browse-this.html" class="external-link">browse_github()</a></code></pre>
 </div>
 <div id="extend-infrastructure-with-templates" class="section level2">
 <h2 class="hasAnchor">
-<a href="#extend-infrastructure-with-templates" class="anchor"></a>Extend infrastructure with templates</h2>
+<a href="#extend-infrastructure-with-templates" class="anchor" aria-hidden="true"></a>Extend infrastructure with templates</h2>
 <ul>
 <li>Install the package.</li>
 </ul>
-<pre><code><a href="https://devtools.r-lib.org//reference/install.html">install()</a></code></pre>
+<pre><code><a href="https://devtools.r-lib.org//reference/install.html" class="external-link">install()</a></code></pre>
 <ul>
 <li>Create README.Rmd from a template.</li>
 </ul>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Setup readme (e.g. adds a line to .buildignore)</span>
-<span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html">use_readme_rmd</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html" class="external-link">use_readme_rmd</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># Overwrite pre-existing file 'README.Rmd' with r2dii's template</span>
-<span class="fu"><a href="https://usethis.r-lib.org/reference/use_template.html">use_template</a></span><span class="op">(</span><span class="st">"README.Rmd"</span>, package <span class="op">=</span> <span class="st">"r2dii.usethis"</span><span class="op">)</span>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/use_template.html" class="external-link">use_template</a></span><span class="op">(</span><span class="st">"README.Rmd"</span>, package <span class="op">=</span> <span class="st">"r2dii.usethis"</span><span class="op">)</span>
 
-<span class="fu"><a href="https://usethis.r-lib.org/reference/badges.html">use_cran_badge</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/badges.html" class="external-link">use_cran_badge</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <ul>
 <li><p>Edit README.Rmd manually.</p></li>
 <li><p>Spellcheck.</p></li>
 <li><p>Knit README.Rmd.</p></li>
 <li><p>Check that R CMD check results in 0 errors, warnings, and messages.</p></li>
 </ul>
-<pre><code><a href="https://devtools.r-lib.org//reference/check.html">check()</a></code></pre>
+<pre><code><a href="https://devtools.r-lib.org//reference/check.html" class="external-link">check()</a></code></pre>
 <ul>
 <li>Commit and push.</li>
 </ul>
 </div>
 <div id="what-else" class="section level2">
 <h2 class="hasAnchor">
-<a href="#what-else" class="anchor"></a>What else?</h2>
+<a href="#what-else" class="anchor" aria-hidden="true"></a>What else?</h2>
 <p>The r2dii.usethis includes many more <a href="https://github.com/2DegreesInvesting/r2dii.usethis/tree/master/inst/templates">templates</a></p>
-<p>For inspiration you may also see <a href="https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/">this post</a></p>
+<p>For inspiration you may also see <a href="https://fgeo.netlify.com/2018/03/28/2018-03-28-building-infrastructure-for-r-packages-with-usethis/" class="external-link">this post</a></p>
 <p>The ultimate source is the R packages book:</p>
 <ul>
 <li>
-<a href="http://r-pkgs.had.co.nz/">First edition</a>.</li>
+<a href="http://r-pkgs.had.co.nz/" class="external-link">First edition</a>.</li>
 <li>
-<a href="https://r-pkgs.org/">Second edition</a> (work in progress; includes usethis).</li>
+<a href="https://r-pkgs.org/" class="external-link">Second edition</a> (work in progress; includes usethis).</li>
 </ul>
 </div>
   </div>
@@ -219,11 +221,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/">Mauro Lepore</a>, <a href="https://2degrees-investing.org/">2 Degrees Investing Initiative</a>.</p>
+  <p></p>
+<p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/" class="external-link external-link">Mauro Lepore</a>, <a href="https://2degrees-investing.org/" class="external-link external-link">2 Degrees Investing Initiative</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -231,6 +235,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -58,9 +58,16 @@
 
 
 
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -134,7 +141,7 @@
     <p>A checklist to add new data to the package r2dii.data</p>
     </div>
 
-    <pre class="usage"><span class='fu'>use_r2dii_data</span><span class='op'>(</span>name <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>use_r2dii_data</span><span class='op'>(</span>name <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,58 +158,60 @@
     <p>Printed output that you may copy and paste into a GitHub issue.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Maybe copy and paste into a GitHub issue.</span>
-<span class='co'># See `?usethis::browse_github_issues()`</span>
-<span class='fu'>use_r2dii_data</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Add `newdata`
-#&gt; 
-#&gt; * [ ] Add "data-raw/newdata.csv" 
-#&gt; * [ ] Add "data-raw/data_dictionary/newdata.csv" 
-#&gt; * [ ] In "data-raw/newdata.R", add something like: 
-#&gt;   ```
-#&gt;   library(usethis)
-#&gt;   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;
-#&gt;   newdata &lt;- read_csv_(file.path("data-raw", "newdata.csv"))
-#&gt;   use_data(newdata, overwrite = TRUE)
-#&gt;   ```
-#&gt; * [ ] `usethis::use_r("newdata")`. Document `newdata` 
-#&gt; * [ ] `usethis::use_test("newdata")`. Add regression tests of `newdata` 
-#&gt; * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
-#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `newdata` 
-#&gt; * [ ] Source data-raw/ and test all datasets remain the same: 
-#&gt;   ```
-#&gt;   r2dii.data::source_data_raw()
-#&gt;   devtools::load_all()
-#&gt;   devtools::test()
-#&gt;   devtools::check()
-#&gt;   ```
-#&gt; * [ ] Edit NEWS.md to include newdata. 
-#&gt; * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </div><div class='input'>
-<span class='fu'>use_r2dii_data</span><span class='op'>(</span><span class='st'>"my_data"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; Add `my_data`
-#&gt; 
-#&gt; * [ ] Add "data-raw/my_data.csv" 
-#&gt; * [ ] Add "data-raw/data_dictionary/my_data.csv" 
-#&gt; * [ ] In "data-raw/my_data.R", add something like: 
-#&gt;   ```
-#&gt;   library(usethis)
-#&gt;   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;
-#&gt;   my_data &lt;- read_csv_(file.path("data-raw", "my_data.csv"))
-#&gt;   use_data(my_data, overwrite = TRUE)
-#&gt;   ```
-#&gt; * [ ] `usethis::use_r("my_data")`. Document `my_data` 
-#&gt; * [ ] `usethis::use_test("my_data")`. Add regression tests of `my_data` 
-#&gt; * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` 
-#&gt; * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `my_data` 
-#&gt; * [ ] Source data-raw/ and test all datasets remain the same: 
-#&gt;   ```
-#&gt;   r2dii.data::source_data_raw()
-#&gt;   devtools::load_all()
-#&gt;   devtools::test()
-#&gt;   devtools::check()
-#&gt;   ```
-#&gt; * [ ] Edit NEWS.md to include my_data. 
-#&gt; * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># Maybe copy and paste into a GitHub issue.</span></span>
+<span class='r-in'><span class='co'># See `?usethis::browse_github_issues()`</span></span>
+<span class='r-in'><span class='fu'>use_r2dii_data</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Add `newdata`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Add "data-raw/newdata.csv" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Add "data-raw/data_dictionary/newdata.csv" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] In "data-raw/newdata.R", add something like: </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   library(usethis)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   newdata &lt;- read_csv_(file.path("data-raw", "newdata.csv"))</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   use_data(newdata, overwrite = TRUE)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_r("newdata")`. Document `newdata` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_test("newdata")`. Add regression tests of `newdata` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `newdata` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Source data-raw/ and test all datasets remain the same: </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   r2dii.data::source_data_raw()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::load_all()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::test()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::check()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Edit NEWS.md to include newdata. </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>use_r2dii_data</span><span class='op'>(</span><span class='st'>"my_data"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Add `my_data`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Add "data-raw/my_data.csv" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Add "data-raw/data_dictionary/my_data.csv" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] In "data-raw/my_data.R", add something like: </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   library(usethis)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   # Source: @&lt;contributor&gt; &lt;URL to issue or pull request&gt;</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   my_data &lt;- read_csv_(file.path("data-raw", "my_data.csv"))</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   use_data(my_data, overwrite = TRUE)</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_r("my_data")`. Document `my_data` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_test("my_data")`. Add regression tests of `my_data` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `source("data-raw/data_dictionary.R"); devtools::load_all()` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] `usethis::use_test("data_dictionary")`. Test `data_dictionary` includes `my_data` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Source data-raw/ and test all datasets remain the same: </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   r2dii.data::source_data_raw()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::load_all()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::test()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   devtools::check()</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   ```</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Edit NEWS.md to include my_data. </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> * [ ] Increment version number in DESCRIPTION and NEWS.md: `usethis::use_version()` </span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -214,11 +223,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https://www.linkedin.com/in/mauro-lepore/'>Mauro Lepore</a>, <a href='https://2degrees-investing.org/'>2 Degrees Investing Initiative</a>.</p>
+  <p><p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/" class="external-link">Mauro Lepore</a>, <a href="https://2degrees-investing.org/" class="external-link">2 Degrees Investing Initiative</a>.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -226,6 +235,8 @@
 
   
 
+
+  
 
   </body>
 </html>

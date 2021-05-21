@@ -65,9 +65,16 @@ the source code of the package r2dii.data." />
 
 
 
+
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -148,7 +155,7 @@ Normally you would call this function from inside the project that contains
 the source code of the package r2dii.data.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>use_bridge</span><span class='op'>(</span><span class='va'>dataset</span>, <span class='va'>data</span>, contributor <span class='op'>=</span> <span class='cn'>NULL</span>, issue <span class='op'>=</span> <span class='cn'>NULL</span>, overwrite <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>use_bridge</span><span class='op'>(</span><span class='va'>dataset</span>, <span class='va'>data</span>, contributor <span class='op'>=</span> <span class='cn'>NULL</span>, issue <span class='op'>=</span> <span class='cn'>NULL</span>, overwrite <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -184,38 +191,38 @@ for an object-name of the form <code>[prefix]_classification</code>, e.g.
 files. It returns the first argument invisibly.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># Work form inside r2dii.data (here I use from a temporary copy)</span>
-<span class='va'>old</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>r2dii_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"r2dii.data"</span><span class='op'>)</span>
-<span class='fu'>fs</span><span class='fu'>::</span><span class='fu'><a href='http://fs.r-lib.org/reference/create.html'>dir_create</a></span><span class='op'>(</span><span class='va'>r2dii_data</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='va'>r2dii_data</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/system.html'>system</a></span><span class='op'>(</span><span class='st'>"git clone https://github.com/2DegreesInvesting/r2dii.data.git -- ."</span><span class='op'>)</span>
-<span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/load_all.html'>load_all</a></span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/2DegreesInvesting/r2dii.usethis'>r2dii.usethis</a></span><span class='op'>)</span>
-
-<span class='co'># This is usually a contributed spreadsheet</span>
-<span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='st'>"fake"</span>
-<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
-  original_code <span class='op'>=</span> <span class='va'>letters</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>,
-  code_level <span class='op'>=</span> <span class='fl'>5</span>,
-  code <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span>,
-  sector <span class='op'>=</span> <span class='st'>"not in scope"</span>,
-  borderline <span class='op'>=</span> <span class='cn'>FALSE</span>
-<span class='op'>)</span>
-<span class='va'>contributor</span> <span class='op'>&lt;-</span> <span class='st'>"@somebody"</span>
-<span class='va'>issue</span> <span class='op'>&lt;-</span> <span class='st'>"#123"</span>
-<span class='fu'>use_bridge</span><span class='op'>(</span><span class='va'>dataset</span>, <span class='va'>data</span>, <span class='va'>contributor</span>, <span class='va'>issue</span><span class='op'>)</span>
-
-<span class='co'># Notice what changed</span>
-<span class='fu'><a href='https://rdrr.io/r/base/system.html'>system</a></span><span class='op'>(</span><span class='st'>"git status -s"</span><span class='op'>)</span>
-
-<span class='co'># Teardown ----------------------------------------------------------------</span>
-<span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span><span class='op'>(</span><span class='va'>r2dii_data</span>, recursive <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='va'>old</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='co'># Work form inside r2dii.data (here I use from a temporary copy)</span></span>
+<span class='r-in'><span class='va'>old</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>r2dii_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"r2dii.data"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>fs</span><span class='fu'>::</span><span class='fu'><a href='http://fs.r-lib.org/reference/create.html'>dir_create</a></span><span class='op'>(</span><span class='va'>r2dii_data</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='va'>r2dii_data</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/system.html'>system</a></span><span class='op'>(</span><span class='st'>"git clone https://github.com/2DegreesInvesting/r2dii.data.git -- ."</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/load_all.html'>load_all</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/2DegreesInvesting/r2dii.usethis'>r2dii.usethis</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># This is usually a contributed spreadsheet</span></span>
+<span class='r-in'><span class='va'>dataset</span> <span class='op'>&lt;-</span> <span class='st'>"fake"</span></span>
+<span class='r-in'><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span></span>
+<span class='r-in'>  original_code <span class='op'>=</span> <span class='va'>letters</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>,</span>
+<span class='r-in'>  code_level <span class='op'>=</span> <span class='fl'>5</span>,</span>
+<span class='r-in'>  code <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span>,</span>
+<span class='r-in'>  sector <span class='op'>=</span> <span class='st'>"not in scope"</span>,</span>
+<span class='r-in'>  borderline <span class='op'>=</span> <span class='cn'>FALSE</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>contributor</span> <span class='op'>&lt;-</span> <span class='st'>"@somebody"</span></span>
+<span class='r-in'><span class='va'>issue</span> <span class='op'>&lt;-</span> <span class='st'>"#123"</span></span>
+<span class='r-in'><span class='fu'>use_bridge</span><span class='op'>(</span><span class='va'>dataset</span>, <span class='va'>data</span>, <span class='va'>contributor</span>, <span class='va'>issue</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Notice what changed</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/system.html'>system</a></span><span class='op'>(</span><span class='st'>"git status -s"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'># Teardown ----------------------------------------------------------------</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/unlink.html'>unlink</a></span><span class='op'>(</span><span class='va'>r2dii_data</span>, recursive <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='va'>old</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -227,11 +234,11 @@ files. It returns the first argument invisibly.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='https://www.linkedin.com/in/mauro-lepore/'>Mauro Lepore</a>, <a href='https://2degrees-investing.org/'>2 Degrees Investing Initiative</a>.</p>
+  <p><p>Developed by <a href="https://www.linkedin.com/in/mauro-lepore/" class="external-link">Mauro Lepore</a>, <a href="https://2degrees-investing.org/" class="external-link">2 Degrees Investing Initiative</a>.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -239,6 +246,8 @@ files. It returns the first argument invisibly.</p>
 
   
 
+
+  
 
   </body>
 </html>
