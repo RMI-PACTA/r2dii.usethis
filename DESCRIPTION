@@ -20,6 +20,7 @@ BugReports:
 Depends: 
     R (>= 3.4)
 Imports: 
+    usethis,
     glue
 Suggests: 
     covr (>= 3.2.1),
