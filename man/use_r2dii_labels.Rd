@@ -2,10 +2,7 @@
 % Please edit documentation in R/use_r2dii_labels.R
 \name{use_r2dii_labels}
 \alias{use_r2dii_labels}
-\title{A slim wrapper around \code{usethis::use_github_labels} to set standard labels
-and colours to any \code{r2dii} type github repository. I vaguely followed the
-style-guide found here:
-https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues}
+\title{Add default r2dii github issue labels to the active repository}
 \usage{
 use_r2dii_labels(delete_default = FALSE)
 }
@@ -16,10 +13,11 @@ appear in the \code{labels} vector and that do not have associated issues.}
 \description{
 A slim wrapper around \code{usethis::use_github_labels} to set standard labels
 and colours to any \code{r2dii} type github repository. I vaguely followed the
-style-guide found here:
-https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues
+style-guide found \href{https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues}{here}.
 }
 \examples{
-## Not run:
-use_r2dii_labels()
+# not run:
+dontrun{
+  use_r2dii_labels()
+}
 }
