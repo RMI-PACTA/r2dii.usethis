@@ -10,18 +10,17 @@ Authors@R:
       person(given = "2 Degrees Investing Initiative",
              role = c("cph", "fnd"),
              email = "contact@2degrees-investing.org"))
-Description: Automate package and project setup. For more
-    information visit <https://2degrees-investing.org/>.
+Description: Automate package and project setup. For more information
+    visit <https://2degrees-investing.org/>.
 License: GPL-3 + file LICENSE
 URL: https://github.com/2DegreesInvesting/r2dii.usethis,
     https://2DegreesInvesting.github.io/r2dii.usethis
-BugReports: 
-    https://github.com/2DegreesInvesting/r2dii.usethis/issues
+BugReports: https://github.com/2DegreesInvesting/r2dii.usethis/issues
 Depends: 
     R (>= 3.4)
 Imports: 
-    usethis,
-    glue
+    glue,
+    usethis
 Suggests: 
     covr (>= 3.2.1),
     devtools,

@@ -16,8 +16,7 @@ and colours to any \code{r2dii} type github repository. I vaguely followed the
 style-guide found \href{https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues}{here}.
 }
 \examples{
-# not run:
-dontrun{
+\dontrun{
   use_r2dii_labels()
 }
 }
