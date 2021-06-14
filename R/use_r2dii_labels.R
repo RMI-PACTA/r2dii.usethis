@@ -9,8 +9,7 @@
 #' @export
 #'
 #' @examples
-#' # not run:
-#' dontrun{
+#' \dontrun{
 #'   use_r2dii_labels()
 #' }
 use_r2dii_labels <- function(delete_default = FALSE) {
