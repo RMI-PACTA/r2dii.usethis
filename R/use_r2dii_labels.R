@@ -33,16 +33,16 @@ use_r2dii_labels <- function(delete_default = FALSE) {
   colours <- c(
     "bug" = "B60205",
     "concept" = "0E8A16", 
-    "documentation" = "FEF2C0", 
+    "documentation" = "D4C5F9", 
     "duplicate" = "CFD3D7", 
     "enhancement" = "1D76DB", 
     "good first issue" = "5319E7", 
     "help wanted" = "FBCA04", 
     "large" = "E99695", 
     "medium" = "F9D0C4", 
-    "small" = "FBCA04", 
-    "on-ADO" = "B60205", 
-    "priority" = "FEF2C0", 
+    "small" = "FEF2C0", 
+    "on-ADO" = "FBCA04", 
+    "priority" = "B60205",
     "wontfix" = "CFD3D7"
     )
   
