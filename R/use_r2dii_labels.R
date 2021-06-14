@@ -2,15 +2,17 @@
 #' 
 #' A slim wrapper around `usethis::use_github_labels` to set standard labels
 #' and colours to any `r2dii` type github repository. I vaguely followed the
-#' style-guide found [here](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues)
+#' style-guide found [here](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues).
 #'
 #' @inheritParams usethis::use_github_labels
 #'
 #' @export
 #'
 #' @examples
-#' ## Not run:
-#' use_r2dii_labels()
+#' # not run:
+#' dontrun{
+#'   use_r2dii_labels()
+#' }
 use_r2dii_labels <- function(delete_default = FALSE) {
   
   labels <- c(
