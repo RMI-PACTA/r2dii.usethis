@@ -100,20 +100,16 @@
 <h2 class="hasAnchor">
 <a href="#setup" class="anchor" aria-hidden="true"></a>Setup</h2>
 <ul>
-<li>Setup a GitHub repo, clone it, and setup the remote: and link it to RStudio
-<ul>
-<li>On GitHub create a new repository. Name it exactly as the package.</li>
-<li>Copy the clone URL.</li>
-<li>On RStudio create a <em>New Project …&gt; Version Control</em>.</li>
-</ul>
-</li>
-<li>Transform the project into an R package.</li>
+<li><p>Setup a GitHub repo, and clone it locally.</p></li>
+<li><p>Create a basic R package.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/create_package.html" class="external-link">create_package</a></span><span class="op">(</span><span class="st">"../r2dii.packagename"</span><span class="op">)</span></code></pre></div>
 <ul>
-<li>A new RStudio session will open automatically.</li>
+<li>Create then open an RStudio project.</li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_rstudio.html" class="external-link">use_rstudio</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="add-minimal-infrastructure" class="section level2">
 <h2 class="hasAnchor">
@@ -121,20 +117,23 @@
 <ul>
 <li>Attach useful packages.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/2DegreesInvesting/r2dii.usethis">r2dii.usethis</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://usethis.r-lib.org" class="external-link">usethis</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></code></pre></div>
 <ul>
-<li>For public packages add a common license (see <code>?usethis::use_*_license()</code>).</li>
+<li>
+<a href="https://r-pkgs.org/license.html" class="external-link">Add a license</a>.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html" class="external-link">use_gpl3_license</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<ul>
-<li>For private packages maybe add “Private package” in a <code>LICENSE</code> file at the root.</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># bash</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="bu">echo</span> <span class="st">"Private package."</span> <span class="op">&gt;</span> LICENSE</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Public for projects that are mainly code</span>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html" class="external-link">use_mit_license</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># Public for projects that are mainly data</span>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html" class="external-link">use_cc0_license</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># Private</span>
+<span class="fu"><a href="https://usethis.r-lib.org/reference/licenses.html" class="external-link">use_proprietary_license</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>Allow opening the GitHub repo with <code><a href="https://usethis.r-lib.org/reference/browse-this.html" class="external-link">browse_github()</a></code>.</li>
 </ul>
