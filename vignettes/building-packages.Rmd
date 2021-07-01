@@ -17,18 +17,19 @@ For a more general explanation see https://r-pkgs.org/whole-game.html.
 
 ## Setup
 
-* Setup a GitHub repo, clone it, and setup the remote: and link it to RStudio
-    * On GitHub create a new repository. Name it exactly as the package.
-    * Copy the clone URL.
-    * On RStudio create a _New Project ...> Version Control_.
+* Setup a GitHub repo, and clone it locally.
 
-* Transform the project into an R package.
+* Create a basic R package.
 
 ```r
 usethis::create_package("../r2dii.packagename")
 ```
 
-* A new RStudio session will open automatically.
+* Create then open an RStudio project.
+
+```r
+usethis::use_rstudio()
+```
 
 ## Add minimal infrastructure
 
@@ -40,17 +41,17 @@ library(usethis)
 library(devtools)
 ```
 
-* For public packages add a common license (see `?usethis::use_*_license()`).
+* [Add a license](https://r-pkgs.org/license.html).
 
 ```r
-use_gpl3_license()
-```
+# Public for projects that are mainly code
+use_mit_license()
 
-* For private packages maybe add "Private package" in a `LICENSE` file at the root.
+# Public for projects that are mainly data
+use_cc0_license()
 
-```bash
-# bash
-echo "Private package." > LICENSE
+# Private
+use_proprietary_license()
 ```
 
 * Allow opening the GitHub repo with `browse_github()`.
