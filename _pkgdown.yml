@@ -1,8 +1,8 @@
+url: https://2degreesinvesting.github.io/r2dii.usethis
+bootstrap: 5
 template:
   params:
     bootswatch: flatly
-
-url: https://github.com/2DegreesInvesting/r2dii.usethis/
 
 authors:
   Mauro Lepore:
