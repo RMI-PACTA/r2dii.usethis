@@ -1,10 +1,10 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1.9001
-pkgdown_sha: 51268b0d9cb0588d7a6404a2b8ef4ee19c435e89
+pkgdown: 2.0.1
+pkgdown_sha: ~
 articles:
   building-packages: building-packages.html
-last_built: 2021-07-01T20:38Z
+last_built: 2021-12-17T11:39Z
 urls:
-  reference: https://github.com/2DegreesInvesting/r2dii.usethis/reference
-  article: https://github.com/2DegreesInvesting/r2dii.usethis/articles
+  reference: https://2degreesinvesting.github.io/r2dii.usethis/reference
+  article: https://2degreesinvesting.github.io/r2dii.usethis/articles
 
