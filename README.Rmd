@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/2DegreesInvesting/r2dii.usethis.svg?branch=master)](https://travis-ci.org/2DegreesInvesting/r2dii.usethis)
 [![R build status](https://github.com/2DegreesInvesting/r2dii.usethis/workflows/R-CMD-check/badge.svg)](https://github.com/2DegreesInvesting/r2dii.usethis/actions)
 [![Codecov test coverage](https://codecov.io/gh/2degreesinvesting/r2dii.usethis/branch/master/graph/badge.svg)](https://codecov.io/gh/2degreesinvesting/r2dii.usethis?branch=master)
+[![R-CMD-check](https://github.com/2DegreesInvesting/r2dii.usethis/workflows/R-CMD-check/badge.svg)](https://github.com/2DegreesInvesting/r2dii.usethis/actions)
 <!-- badges: end -->
 
 The goal of r2dii.usethis is to automate the setup of r2dii packages and projects. It aims to be an extension of the [usethis](https://usethis.r-lib.org/) package, customize for [2 Degrees Investing Initiative](https://2degrees-investing.org/).
