@@ -1,3 +1,5 @@
+# Based on https://github.com/cjyetman/encoding_check
+# > This is where I try to always keep the most up-to-date version of this GH Action -- CJ
 name: check file encodings in PR
 on: [pull_request]
 jobs:
